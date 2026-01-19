@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>최강현 | Actor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="4550fe86984bd43e4f298200acbd97cdc0781828" />
+
+  <style>
+
+html, body{
+  overflow-x:hidden;
+  max-width:100%;
+}
+
+/* ===== BASE ===== */
+body{
+  margin:0;
+  font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background: #1b1b1a;
+  color:#f1f1f1;
+  line-height:1.8;
+}
+html{scroll-behavior:smooth}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:50% 50%;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* 왼쪽 텍스트 영역 */
+.hero-left{
+  position:relative;
+  z-index:2;
+  max-width:420px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+
+/* 텍스트 */
+.hero-left h1,
+.hero-left h2{
+  margin:0;
+}
+
+.hero-left h1{
+  font-size:52px;
+  letter-spacing:2px;
+  line-height:1.05;
+}
+
+.hero-left h2{
+  font-size:17px;
+  font-weight:300;
+  margin-top:5px;
+  line-height:1.5;
+  color:#9c9c9c;
+}
+
+.hero-contact{
+  margin-top:8px;
+  font-size:15.5px;
+  line-height:1.9;
+  color:#cfcfcf;
+}
+
+.hero-contact a{
+  color:#cfcfcf;
+  text-decoration:none;
+}
+.hero-contact a:hover{
+  color:#ffffff;
+}
+
+.hero-profile{
+  margin-top:12px;
+  font-size:14.5px;
+  line-height:1.8;
+  color:#cfcfcf;
+}
+
+.hero-profile a{
+  color:#cfcfcf;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.hero-profile a:hover{
+  color:#ffffff;
+  border-bottom-color:#ffffff;
+}
+
+/* 오른쪽 이미지 영역 */
+.hero-right{
+  position:absolute;
+  top:0;
+  right:0;
+  width:55%;
+  height:100%;
+  padding-right:200px;
+  box-sizing:border-box;
+  background:url("images/main1.jpg") no-repeat;
+  background-size:contain;
+  background-position:right center;
+  background-origin:content-box;
+  background-color:#1b1b1a;
+}
+
+/* ===== SECTION ===== */
+section{
+  max-width:960px;
+  margin:0 auto;
+  padding:48px 20px;
+}
+h3{
+  font-size:22px;
+  font-weight:500;
+  margin-bottom:24px;
+  letter-spacing:1px;
+}
+
+/* ===== PROFILE / STILLS GRID ===== */
+.photos,.stillcuts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:42px;
+}
+.photos img,.stillcuts img{
+  width:100%;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+/* ===== VIDEO ===== */
+.video-grid{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+iframe{
+  width:100%;
+  height:320px;
+  border-radius:4px;
+  border:none;
+}
+
+/* ===== CAREER ===== */
+#highlights{
+  padding-top:12px;
+  margin-bottom:32px;
+  border-top:1px solid #2a2a2a;
+}
+#highlights h4{
+  font-size:16px;
+  margin-bottom:12px;
+}
+.career-list{
+  list-style:none;
+  padding:0;
+  max-width:760px;
+}
+.career-list li{
+  margin-bottom:22px;
+  color:#d3d3d3;
+}
+
+/* ===== ACCORDION ===== */
+.accordion-item{margin-bottom:20px}
+.accordion-title{
+  width:100%;
+  background:none;
+  border:none;
+  color:#ffffff;
+  font-size:16px;
+  text-align:left;
+  padding:14px 0;
+  cursor:pointer;
+  border-bottom:1px solid #1f1f1f;
+}
+.accordion-content{
+  display:none;
+  padding-top:20px;
+}
+
+.accordion-title{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  width:auto;
+}
+
+.title-text{
+  display:inline-block;
+}
+
+.accordion-icon{
+  width:16px;
+  text-align:center;
+  font-size:18px;
+  font-weight:300;
+  line-height:1;
+  color:#8a8a8a;
+}
+
+.accordion-title:hover .accordion-icon{
+  color:#bdbdbd;
+}
+
+/* ===== PRESS ===== */
+.press a{
+  display:block;
+  max-width:760px;
+  line-height:1.8;
+  word-break:keep-all;
+  color:#f1f1f1;
+  text-decoration:none;
+  border-bottom:1px solid #2a2a2a;
+  padding:16px 0;
+}
+.press a:hover{color:#c7e4ff}
+
+/* ===== CONTACT ===== */
+#contact p{color:#cfcfcf}
+
+/* ===== FOOTER ===== */
+footer{
+  width:100%;
+  text-align:center;
+  padding:70px 20px;
+  font-size:13px;
+  color:#777;
+}
+
+/* ===== LIGHTBOX ===== */
+#lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+
+  .photos,
+  .stillcuts{
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px;
+  }
+
+  .hero{
+    display:flex;
+    flex-direction:column;
+    min-height:auto;
+    width:100%;
+    overflow:hidden;
+  }
+
+  .hero-right{
+    position:relative;
+    width:100%;
+    height:70vh;
+    background-size:cover;
+    background-position:center 15%;
+    padding-right:0;
+  }
+
+  .hero-left{
+    width:100%;
+    max-width:none;
+    padding:28px 20px 0;
+  }
+
+  .hero-left{
+    order:2;   /* 텍스트 ↓ */
+  }
+
+  .hero-right{
+    order:1;   /* 사진 ↑ */
+  }
+
+  .hero-left h1{font-size:34px;}
+  .hero-left h2{font-size:14px;}
+
+  .video-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-top:32px;
+  }
+
+  .video-grid iframe{
+    height:180px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- 👉 여기부터 아래는 네가 만든 HTML 그대로 -->
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>최강현</h1>
+    <h2>Choi Gang Hyun</h2>
+    <h2>Actor | Korean Film</h2>
+    <div class="hero-profile">
+      생년 1998년<br>
+      신체 180cm l 68kg<br>
+      학력 서울예술대학 연기전공<br>
+      특기 태권도 4단 l 현대무용<br>
+      <a href="https://www.kobis.or.kr/kobis/business/mast/peop/searchPeoplePrintList.do?peopleCd=20403607&p_gubun=undefined" target="_blank">
+        KOBIS 20403607
+      </a>
+    </div>
+  </div>
+  <div class="hero-right"></div>
+</div>
+
+<!-- PROFILE -->
+<section id="profile">
+<h3>프로필</h3>
+<div class="photos">
+<img src="images/photo1.jpg" onclick="openLightbox(this.src)">
+<img src="images/photo2.jpg" onclick="openLightbox(this.src)">
+<img src="images/photo3.jpg" onclick="openLightbox(this.src)">
+<img src="images/photo4.jpg" onclick="openLightbox(this.src)">
+<img src="images/photo5.jpg" onclick="openLightbox(this.src)">
+<img src="images/photo6.jpg" onclick="openLightbox(this.src)">
+</div>
+
+<div class="video-grid">
+<iframe src="https://www.youtube.com/embed/x_CGZIH2ezE" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/u3wIkYY4-jU" allowfullscreen></iframe>
+</div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+<h3>경력</h3>
+
+<div id="highlights">
+<h4>대표작</h4>
+<ul class="career-list">
+<li><strong>2025</strong> 장편영화 <em>후 광</em> – 노영완 감독 | 주연<br>38회 도쿄국제영화제 Asian Future 작품상 수상</li>
+<li><strong>2025</strong> 장편영화 <em>세계의 주인</em> – 윤가은 감독 | 조단역<br>50회 토론토국제영화제 경쟁 부문 초청 상영</li>
+</ul>
+</div>
+
+<div class="accordion">
+<div class="accordion-item">
+<button class="accordion-title">
+  <span class="title-text">SHORT FILM</span>
+  <span class="accordion-icon">+</span>
+</button>
+
+<div class="accordion-content">
+<ul class="career-list">
+<li>2024 <em>무대</em> – 중앙대학교 대학원 | 주연</li>
+<li>2024 <em>카페 세잎클로버</em> – 한국방송예술교육진흥원 | 주연</li>
+<li>2024 <em>소녀, 순심</em> – 홍익대학교 | 주연</li>
+<li>2023 <em>#Value!</em> – 고려대학교 | 주연</li>
+<li>2023 <em>러브랭귀지</em> – 동국대학교 대학원 | 주연</li>
+<li>2022 <em>초록동색</em> – 서울예술대학교 | 주연</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-title">
+  <span class="title-text">MUSIC VIDEO</span>
+  <span class="accordion-icon">+</span>
+</button>
+
+<div class="accordion-content">
+<ul class="career-list">
+<li>2023 양다일 – <em>꽃</em> | 주연</li>
+<li>2022 한동근 – <em>사랑인걸</em> | 주연</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-title">
+  <span class="title-text">THEATRE</span>
+  <span class="accordion-icon">+</span>
+</button>
+
+
+<div class="accordion-content">
+<ul class="career-list">
+<li>2019 <em>Midnight Travel</em> | 무용수</li>
+<li>2018 <em>Eat</em> (무언극) | 주연</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STILLS -->
+<section id="stills">
+<h3>스틸 컷</h3>
+<div class="stillcuts">
+<img src="images/still1.jpg" onclick="openLightbox(this.src)">
+<img src="images/still2.jpg" onclick="openLightbox(this.src)">
+<img src="images/still3.jpg" onclick="openLightbox(this.src)">
+<img src="images/still4.jpeg" onclick="openLightbox(this.src)">
+<img src="images/still5.jpeg" onclick="openLightbox(this.src)">
+<img src="images/still6.jpeg" onclick="openLightbox(this.src)">
+</div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+<h3>작품과 방향</h3>
+<p>
+안녕하세요 저는 더 깊은 감정을 바라볼 수 있는 배우이자 사람이 되고자,<br>
+저에게 주어지는 만남과 경험을 진심으로 마주하며 하루를 살아가고자 합니다.<br>
+감사하게도 좋은 인연을 만나 작품을 이어가고 있으며,<br>
+제가 꿈꾸는 좋은 배우가 되도록 뜨겁게 살아가겠습니다.
+</p>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+<h3>보도 · 기사</h3>
+<div class="press">
+<a href="https://cine21.com/news/view/?mag_id=108779" target="_blank">
+시네21 [인터뷰] 보이지 않던 이들의 삶에 촛불 하나를, &lt;후광&gt; 노영완 감독, 최강현 배우
+</a>
+<a href="https://www.newsprime.co.kr/news/article/?no=708243" target="_blank">
+노영완 감독 데뷔작 &lt;후광&gt;, 제38회 도쿄국제영화제 경쟁 부문 진출
+</a>
+<a href="https://2025.tiff-jp.net/news/en/?p=20157" target="_blank">
+[Event Report] The Burden of Family Undoes a Bright Future
+</a>
+<a href="https://www.screendaily.com/reviews/halo-review-gruelling-south-korean-debut-leans-into-the-grind-of-the-gig-economy/5210525.article?utm_source=chatgpt.com" target="_blank">
+[SCREENDAILY] Gruelling South Korean debut leans into the grind of the gig economy
+</a>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h3>연락</h3>
+<p>
+Instagram · <a href="https://www.instagram.com/choigang_98" target="_blank">@choigang_98</a><br>
+E-mail · choiganghyun@naver.com
+</p>
+</section>
+
+<footer>© 2026 all rights reserved</footer>
+
+<div id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+
+document.querySelectorAll(".accordion-title").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector(".accordion-icon");
+
+    const isOpen = content.style.display === "block";
+
+    content.style.display = isOpen ? "none" : "block";
+    icon.textContent = isOpen ? "+" : "−";
+  });
+});
+
+</script>
+
+</body>
+</html>
