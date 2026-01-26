@@ -14,6 +14,7 @@ function setActive(id){
   sections.forEach(s=>s.classList.toggle("active",s.id===id));
   navLinks.forEach(a=>a.classList.toggle("is-active",a.dataset.target===id));
   if(id==="main"){body.classList.remove("sub");body.style.overflow="hidden";}else{body.classList.add("sub");body.style.overflow="auto";}
+  window.scrollTo({top:0,left:0,behavior:"instant"});
 }
 
 function fadeTo(id){
