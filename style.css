@@ -135,7 +135,6 @@ body.sub .topnav{display:block;}
   .acc-work-text{font-size:15px;line-height:1.8;}
   .acc-work-shots{width:100%;display:flex;gap:10px;}
   .acc-work-shots img{max-width:48%;}
-
   .acc-sub{font-size:12px;line-height:1.8;margin-top:6px;}
 
   /* profile grid */
@@ -148,11 +147,23 @@ body.sub .topnav{display:block;}
   .press-title{font-size:16px;margin-top:34px;}
   .press-item{font-size:15px;line-height:1.7;padding:18px 0;}
 
-  /* 5) contact: 모바일에서는 가운데 말고 좌측 시작 */
-  #contact .page{min-height:auto;display:block;}
-  .contact{margin-top:34px;align-items:flex-start;gap:10px;font-size:16px;line-height:1.9;letter-spacing:.03em;}
+  /* 5) contact: 모바일에서는 가운데 말고 좌측 시작 + 따로 노는 transform 잔재 완전 제거 */
+  #contact .page{transform:none !important;transform-origin:top left !important;min-height:100vh !important;display:flex !important;flex-direction:column !important;justify-content:center !important;}
+  .contact{margin-top:34px;align-items:flex-start;gap:10px;font-size:16px;line-height:1.9;letter-spacing:.03em;text-align:left;}
 
   /* 라이트박스는 그대로 */
   .video-wrap{margin-top:46px;}
   .video-title{font-size:15px;}
+
+  /* ✅ 모바일 글씨 통일 시스템 */
+  :root{--m-title:15px;--m-body:14px;--m-sub:12px;}
+
+  .page-header h1,.about-title,.press-title,.video-title{font-size:var(--m-title)!important;}
+  .info,.work-title,.work-desc,.acc-head,.acc-item,.acc-work-text,.about-text,.press-item{font-size:var(--m-body)!important;}
+  .acc-sub{font-size:var(--m-sub)!important;}
+
+  /* ✅ contact는 연락처니까 더 잘 보이게(좌측 시작 + 본문보다 크게) */
+  #contact .contact{font-size:calc(var(--m-body) + 4px)!important;align-items:flex-start;text-align:left;line-height:2 !important;}
+  #contact .contact a{word-break:break-word;}
 }
+
