@@ -101,6 +101,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 
   /* 모바일 메인 포스터 */
   .bg-main{background:url(images/main1-mobile.jpg) center/contain no-repeat;background-color:#111111;}
+  .bg-sub{background:url(images/main1-mobile.jpg) center/cover no-repeat;}
   .poster{justify-content:flex-end;align-items:flex-start;padding-top:70px;padding-right:18px;text-align:right;}
   .poster-text{align-items:flex-end;transform:none;}
   .poster-en{font-size:12px;line-height:1.5;margin-bottom:8px;letter-spacing:.14em;}
