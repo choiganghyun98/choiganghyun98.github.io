@@ -8,13 +8,29 @@ const lightbox=document.getElementById("lightbox");
 const lbImg=document.getElementById("lbImg");
 const lbClose=document.getElementById("lbClose");
 
+const guard=document.getElementById("topnavGuard");
+
 const FADE=360;
+
+function syncNavGuardHeight(){
+  if(!guard||!topNav)return;
+  const h=Math.ceil(topNav.getBoundingClientRect().height);
+  guard.style.height=h+"px";
+}
+
+function updateNavGuard(){
+  const id=document.querySelector(".section.active")?.id||"main";
+  if(id==="main"){body.classList.remove("nav-guard");return;}
+  if(window.scrollY>10){body.classList.add("nav-guard");}else{body.classList.remove("nav-guard");}
+}
 
 function setActive(id){
   sections.forEach(s=>s.classList.toggle("active",s.id===id));
   navLinks.forEach(a=>a.classList.toggle("is-active",a.dataset.target===id));
   if(id==="main"){body.classList.remove("sub");body.style.overflow="hidden";}else{body.classList.add("sub");body.style.overflow="auto";}
   window.scrollTo({top:0,left:0,behavior:"instant"});
+  syncNavGuardHeight();
+  setTimeout(updateNavGuard,50);
 }
 
 function fadeTo(id){
@@ -44,12 +60,19 @@ document.querySelectorAll("[data-target]").forEach(el=>{
 window.addEventListener("load",()=>{
   const id=(location.hash||"#main").replace("#","");
   if(document.getElementById(id))setActive(id);
+  syncNavGuardHeight();
+  updateNavGuard();
 });
 
 window.addEventListener("hashchange",()=>{
   const id=(location.hash||"#main").replace("#","");
   if(document.getElementById(id))go(id);
 });
+
+window.addEventListener("scroll",updateNavGuard,{passive:true});
+
+/* ✅ 이 한 줄만 추가됨: 회전/리사이즈 시 guard 높이 자동 보정 */
+window.addEventListener("resize",syncNavGuardHeight);
 
 document.querySelectorAll(".accordion").forEach(acc=>{
   const head=acc.querySelector(".acc-head");
