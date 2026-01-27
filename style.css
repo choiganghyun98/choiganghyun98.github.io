@@ -96,14 +96,63 @@ body.sub .topnav{display:block;}
 
 @media (max-width:900px){
   body{overflow:hidden;}
-  .page{padding:90px 0 70px;}
-  .poster{padding-top:20vh;}
-  .poster-ko{font-size:52px;}
-  .profile-wrap{flex-direction:column;gap:26px;}
+
+  /* 모바일 메인 포스터 */
+  .bg-main{background:url(images/main1-mobile.jpg) center/contain no-repeat;background-color:#111111;}
+  .poster{justify-content:flex-end;align-items:flex-start;padding-top:70px;padding-right:18px;text-align:right;}
+  .poster-text{align-items:flex-end;transform:none;}
+  .poster-en{font-size:12px;line-height:1.5;margin-bottom:8px;letter-spacing:.14em;}
+  .poster-ko{font-size:36px;line-height:1.2;margin:12px 0 16px;letter-spacing:.12em;}
+  .poster-menu{gap:12px;}
+  .poster-link{font-size:11px;line-height:1.6;}
+
+  /* ✅ 핵심: 모바일에서는 scale로 줄이지 말고 '진짜 폭'으로 맞추기 (오른쪽 여백 해결) */
+  .page{transform:none;width:100%;margin:0;padding:88px 18px 70px;}
+
+  /* ✅ 우측 상단 메뉴가 덮치지 않게 */
+  .topnav{padding:16px 12px;}
+  .topnav-link{font-size:11px;}
+
+  /* 1) profile 오른쪽 여백 줄이기 + 좌우 동일 */
+  .profile-wrap{flex-direction:column;gap:22px;margin-top:34px;}
   .profile-left{flex:auto;width:100%;}
-  .work-block{flex-direction:column;gap:18px;}
+  .profile-right{gap:10px;}
+
+  /* 2) work 전체 글씨 조금 다운 (세계의 주인 라인 잘림 방지) */
+  .work-title{font-size:18px;line-height:1.75;}
+  .work-desc{font-size:15px;line-height:1.8;}
+
+  .work-block{flex-direction:column;gap:16px;margin-top:34px;}
+  .work-text{max-width:100%;}
   .work-shots{flex:auto;width:100%;}
   .work-shots img{max-width:48%;}
-  .profile-grid{grid-template-columns:repeat(2,1fr);}
-  #contact .page{min-height:100vh;}
+
+  /* 3) SHORT FILM 스틸 들어간 항목: 작품명 위 / 스틸 아래로(세로) */
+  .acc-head{font-size:15px;padding:16px 0;}
+  .acc-ico{font-size:15px;}
+  .acc-item{font-size:15px;line-height:1.8;padding:8px 0;}
+  .acc-work{flex-direction:column;gap:12px;align-items:flex-start;padding:14px 0;}
+  .acc-work-text{font-size:15px;line-height:1.8;}
+  .acc-work-shots{width:100%;display:flex;gap:10px;}
+  .acc-work-shots img{max-width:48%;}
+
+  .acc-sub{font-size:12px;line-height:1.8;margin-top:6px;}
+
+  /* profile grid */
+  .profile-grid{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px;}
+
+  /* 4) about 오른쪽 여백 해결 + 글씨 모바일 톤으로 다운 */
+  .about-wrap{max-width:100%;}
+  .about-title{font-size:16px;margin-bottom:12px;}
+  .about-text{font-size:15px;line-height:1.95;}
+  .press-title{font-size:16px;margin-top:34px;}
+  .press-item{font-size:15px;line-height:1.7;padding:18px 0;}
+
+  /* 5) contact: 모바일에서는 가운데 말고 좌측 시작 */
+  #contact .page{min-height:auto;display:block;}
+  .contact{margin-top:34px;align-items:flex-start;gap:10px;font-size:16px;line-height:1.9;letter-spacing:.03em;}
+
+  /* 라이트박스는 그대로 */
+  .video-wrap{margin-top:46px;}
+  .video-title{font-size:15px;}
 }
