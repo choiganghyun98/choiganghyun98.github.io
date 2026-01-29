@@ -33,6 +33,10 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 .poster-ko{font-size:70.2px;font-weight:400;letter-spacing:.12em;margin:18px 0 32px;font-family:"Noto Serif KR","Inter",sans-serif;line-height:1.25;}
 .poster-link{background:none;border:none;color:var(--text);font-size:15.6px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;cursor:pointer;transition:opacity .2s ease,transform .2s ease;line-height:1.7;}
 .poster-link:hover{opacity:1;transform:translateY(-1px);}
+.poster-icons{position:absolute;top:22px;right:19vw;display:flex;gap:12px;z-index:5;}
+.icon-btn{width:auto;height:auto;display:inline-flex;place-items:center;border:none;border-radius:0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:.9;transition:opacity .2s ease,transform .2s ease;}
+.icon-btn:hover{opacity:1;transform:translateY(-1px);}
+.icon-btn img{width:26px;height:26px;display:block;opacity:1;}
 #main .poster-text{transform:scale(.75);transform-origin:top right;}
 
 .page-header h1{font-size:var(--fs-title);font-weight:400;letter-spacing:.12em;text-transform:uppercase;}
@@ -108,7 +112,10 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .poster-ko{font-size:36px;line-height:1.2;margin:12px 0 16px;letter-spacing:.12em;}
   .poster-menu{gap:12px;}
   .poster-link{font-size:11px;line-height:1.6;}
-
+  .poster-icons{top:16px;right:18px;gap:10px;}
+  .icon-btn{width:32px;height:32px;}
+  .icon-btn img{width:20px;height:20px;}
+  
   /* ✅ 핵심: 모바일에서는 scale로 줄이지 말고 '진짜 폭'으로 맞추기 (오른쪽 여백 해결) */
   .page{transform:none;width:100%;margin:0;padding:88px 18px 70px;}
 
