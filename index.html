@@ -56,24 +56,51 @@
 <div class="page-header"><h1>profile</h1><div class="slash"></div></div>
 
 <div class="profile-wrap">
-<div class="profile-left"><img src="images/profile1.jpg" alt="profile1" class="zoom"></div>
-<div class="profile-right">
-<div class="info"><span>생년</span><span>1998년</span></div>
-<div class="info"><span>신체</span><span>180cm l 68kg</span></div>
-<div class="info"><span>학력</span><span>서울예술대학 연기전공</span></div>
-<div class="info"><span>특기</span><span>태권도 4단 l 현대무용</span></div>
-<div class="info"><span>KOBIS</span><span><a class="kobis-link" href="https://www.kobis.or.kr/kobis/business/mast/peop/searchPeoplePrintList.do?peopleCd=20403607&p_gubun=undefined" target="_blank">20403607</a></span></div>
-</div>
+  <!-- ✅ 대표 이미지: profile1 유지 (단, data-featured만 추가) -->
+  <div class="profile-left">
+    <img src="images/profile1.jpg" alt="profile1" class="zoom" data-featured="profile">
+  </div>
+
+  <div class="profile-right">
+    <div class="info"><span>생년</span><span>1998년</span></div>
+    <div class="info"><span>신체</span><span>180cm l 68kg</span></div>
+    <div class="info"><span>학력</span><span>서울예술대학 연기전공</span></div>
+    <div class="info"><span>특기</span><span>태권도 4단 l 현대무용</span></div>
+    <div class="info"><span>KOBIS</span><span><a class="kobis-link" href="https://www.kobis.or.kr/kobis/business/mast/peop/searchPeoplePrintList.do?peopleCd=20403607&p_gubun=undefined" target="_blank">20403607</a></span></div>
+  </div>
 </div>
 
-<div class="profile-grid">
-<img src="images/profile2.jpg" alt="profile2" class="zoom">
-<img src="images/profile3.jpg" alt="profile3" class="zoom">
-<img src="images/profile4.jpg" alt="profile4" class="zoom">
-<img src="images/profile5.jpg" alt="profile5" class="zoom">
-<img src="images/profile6.jpg" alt="profile6" class="zoom">
-<img src="images/profile7.jpg" alt="profile7" class="zoom">
+<!-- ✅ profile-grid 제거 → profile strip 추가 -->
+<div class="strip strip--profile" aria-label="Profile stills">
+  <div class="strip__track">
+    <button class="strip__item is-selected" type="button" data-target="profile" data-src="images/profile1.jpg" aria-label="profile1">
+      <img src="images/profile1.jpg" alt="profile1">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile2.jpg" aria-label="profile2">
+      <img src="images/profile2.jpg" alt="profile2">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile3.jpg" aria-label="profile3">
+      <img src="images/profile3.jpg" alt="profile3">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile4.jpg" aria-label="profile4">
+      <img src="images/profile4.jpg" alt="profile4">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile5.jpg" aria-label="profile5">
+      <img src="images/profile5.jpg" alt="profile5">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile6.jpg" aria-label="profile6">
+      <img src="images/profile6.jpg" alt="profile6">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile7.jpg" aria-label="profile7">
+      <img src="images/profile7.jpg" alt="profile7">
+    </button>
+  </div>
+  <div class="strip__fade strip__fade--left"></div>
+  <div class="strip__fade strip__fade--right"></div>
 </div>
+
+<button class="strip__edge strip__edge--left" type="button" aria-label="Previous"></button>
+<button class="strip__edge strip__edge--right" type="button" aria-label="Next"></button>
 
 <div class="video-wrap">
 <div class="video-title">출연영상</div>
@@ -90,42 +117,71 @@
 <div class="page">
 <div class="page-header"><h1>work</h1><div class="slash"></div></div>
 
-<div class="work-block">
-<div class="work-text">
-<div class="work-title">2025 장편영화 후 광 – 노영완 감독 | 주연</div>
-<div class="work-desc">38회 도쿄국제영화제 Asian Future 작품상 수상</div>
-</div>
-<div class="work-shots">
-<img src="images/work1.jpg" alt="work1" class="zoom">
-<img src="images/work2.jpg" alt="work2" class="zoom">
-</div>
+<!-- ✅ WORK 상단: 대표 큰 이미지 + strip -->
+<div class="work__featured">
+  <img src="images/work1.jpg" alt="work featured" class="zoom" data-featured="work">
 </div>
 
-<div class="work-block">
-<div class="work-text">
-<div class="work-title">2025 장편영화 세계의 주인 – 윤가은 감독 | 단역</div>
-<div class="work-desc">50회 토론토국제영화제 경쟁 부문 초청 상영</div>
+<div class="strip strip--work" aria-label="Work stills">
+  <div class="strip__track">
+    <!-- 기존 WORK 사진들 -->
+    <button class="strip__item is-selected" type="button" data-target="work" data-src="images/work1.jpg" aria-label="work1">
+      <img src="images/work1.jpg" alt="work1">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/work2.jpg" aria-label="work2">
+      <img src="images/work2.jpg" alt="work2">
+    </button>
+
+    <!-- 기존 SHORT FILM 아코디언 안의 사진들 -->
+    <button class="strip__item" type="button" data-target="work" data-src="images/short1-1.jpeg" aria-label="short1-1">
+      <img src="images/short1-1.jpeg" alt="short1-1">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/short1-2.jpeg" aria-label="short1-2">
+      <img src="images/short1-2.jpeg" alt="short1-2">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/short2-1.jpeg" aria-label="short2-1">
+      <img src="images/short2-1.jpeg" alt="short2-1">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/short2-2.jpg" aria-label="short2-2">
+      <img src="images/short2-2.jpg" alt="short2-2">
+    </button>
+  </div>
+  <div class="strip__fade strip__fade--left"></div>
+  <div class="strip__fade strip__fade--right"></div>
 </div>
+<div class="work-category">대표작</div>
+
+<!-- ✅ 대표작: 통일 포맷 wrapper -->
+<div class="work-featured">
+  <div class="acc-item">
+    2025 장편영화 후 광 – 노영완 감독 | 주연
+    <div class="acc-sub">38회 도쿄국제영화제 Asian Future 작품상 수상</div>
+  </div>
+
+  <div class="acc-item">
+    2025 장편영화 세계의 주인 – 윤가은 감독 | 단역
+    <div class="acc-sub">50회 토론토국제영화제 경쟁 부문 초청 상영</div>
+  </div>
 </div>
 
 <div class="accordion">
 <button class="acc-head" aria-expanded="false"><span>SHORT FILM</span><span class="acc-ico">+</span></button>
 <div class="acc-body">
-<div class="acc-work">
-  <div class="acc-work-text">2024 무대 – 중앙대학교 대학원 | 주연</div>
-  <div class="acc-work-shots">
-    <img src="images/short1-1.jpeg" alt="무대 still 1" class="zoom">
-    <img src="images/short1-2.jpeg" alt="무대 still 2" class="zoom">
-  </div>
+
+<div class="acc-item">
+  <div class="acc-item-text">2024 무대 – 중앙대학교 대학원 | 주연</div>
 </div>
+
 <div class="acc-item">
   2024 카페 세잎클로버 – 한국방송예술교육진흥원 | 주연
   <div class="acc-sub">시네마테크 KOFA l 상영</div>
 </div>
+
 <div class="acc-item">2024 소녀, 순심 – 홍익대학교 | 주연</div>
 <div class="acc-item">2023 #Value! – 고려대학교 | 주연</div>
-<div class="acc-work">
-  <div class="acc-work-text">
+
+<div class="acc-item">
+  <div class="acc-item-text">
     2023 러브랭귀지 – 동국대학교 대학원 | 주연
     <div class="acc-sub">
       4TH CINEMA UNKNOWN l 상영<br>
@@ -133,11 +189,8 @@
       24’ LIFTOFF FESTIVAL l 상영
     </div>
   </div>
-  <div class="acc-work-shots">
-    <img src="images/short2-1.jpeg" alt="러브랭귀지 still 1" class="zoom">
-    <img src="images/short2-2.jpg" alt="러브랭귀지 still 2" class="zoom">
-  </div>
 </div>
+
 <div class="acc-item">2022 초록동색 – 서울예술대학교 | 주연</div>
 </div>
 </div>
@@ -151,7 +204,7 @@
 </div>
 
 <div class="accordion">
-<button class="acc-head" aria-expanded="false"><span>THEATER</span><span class="acc-ico">+</span></button>
+<button class="acc-head" aria-expanded="false"><span>THEATRE</span><span class="acc-ico">+</span></button>
 <div class="acc-body">
 <div class="acc-item">2019 Midnight Travel | 무용수</div>
 <div class="acc-item">2018 Eat (무언극) | 주연</div>
