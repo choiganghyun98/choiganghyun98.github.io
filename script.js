@@ -27,7 +27,7 @@ function updateNavGuard(){
 function setActive(id){
   sections.forEach(s=>s.classList.toggle("active",s.id===id));
   navLinks.forEach(a=>a.classList.toggle("is-active",a.dataset.target===id));
-  if(id==="main"){body.classList.remove("sub");body.style.overflow="hidden";}else{body.classList.add("sub");body.style.overflow="auto";}
+  if(id==="main"){body.classList.remove("sub");body.style.overflow="hidden";}else{body.classList.add("sub");body.style.overflow="hidden";}
   window.scrollTo({top:0,left:0,behavior:"instant"});
   syncNavGuardHeight();
   setTimeout(updateNavGuard,50);
@@ -225,3 +225,30 @@ function initStripSlider(stripEl){
 window.addEventListener("load",()=>{
   document.querySelectorAll(".strip").forEach(initStripSlider);
 });
+
+/* ===== MENU TOGGLE ===== */
+const menuBtn=document.getElementById("menuBtn");
+const menuPanel=document.getElementById("menuPanel");
+
+if(menuBtn && menuPanel){
+
+  menuBtn.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    menuPanel.classList.toggle("open");
+  });
+
+  // 메뉴 클릭 시 닫기
+  menuPanel.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      menuPanel.classList.remove("open");
+    });
+  });
+
+  // 바깥 클릭 시 닫기
+  document.addEventListener("click",(e)=>{
+    if(!menuPanel.contains(e.target) && !menuBtn.contains(e.target)){
+      menuPanel.classList.remove("open");
+    }
+  });
+
+}
