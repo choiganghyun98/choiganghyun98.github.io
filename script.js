@@ -235,12 +235,14 @@ if(menuBtn && menuPanel){
   menuBtn.addEventListener("click",(e)=>{
     e.stopPropagation();
     menuPanel.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
   });
 
   // 메뉴 클릭 시 닫기
   menuPanel.querySelectorAll("a").forEach(link=>{
     link.addEventListener("click",()=>{
       menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
     });
   });
 
