@@ -17,17 +17,30 @@
 <header class="topnav" id="topNav">
 <div class="topnav-guard" id="topnavGuard"></div>
 <div class="topnav-inner">
-<a class="topnav-link" href="#main" data-target="main">main</a>
-<a class="topnav-link" href="#profile" data-target="profile">profile</a>
-<a class="topnav-link" href="#work" data-target="work">work</a>
-<a class="topnav-link" href="#about" data-target="about">about</a>
-<a class="topnav-link" href="#contact" data-target="contact">contact</a>
+
+<button class="icon-btn lang-btn" id="langToggleTop">
+  <span class="lang-ko active">KR</span>
+  <span class="lang-en">EN</span>
+</button>
+
+<button class="menu-btn" id="menuBtn">MENU</button>
+
+<div class="menu-panel" id="menuPanel">
+  <a href="#main" data-target="main">main</a>
+  <a href="#profile" data-target="profile">profile</a>
+  <a href="#work" data-target="work">work</a>
+  <a href="#about" data-target="about">about</a>
+  <a href="#contact" data-target="contact">contact</a>
+</div>
+
 </div>
 </header>
 
 <section id="main" class="section active">
 <div class="poster">
   <div class="poster-icons" aria-label="Social links">
+
+    <button class="icon-btn lang-btn" id="langToggle"><span class="lang-ko active">KR</span> <span class="lang-en">EN</span></button>
     <a class="icon-btn" href="https://www.instagram.com/choigang_98" target="_blank" rel="noopener" aria-label="Instagram">
       <img src="images/icon-instagram.svg" alt="">
     </a>
@@ -37,6 +50,7 @@
     <a class="icon-btn" href="tel:+821038545366" aria-label="Phone">
       <img src="images/icon-call.svg" alt="">
     </a>
+    
   </div><div class="poster-text">
 <div class="poster-en">Choi Gang Hyun</div>
 <div class="poster-en">ACTOR / KOREAN FILM</div>
@@ -62,10 +76,10 @@
   </div>
 
   <div class="profile-right">
-    <div class="info"><span>생년</span><span>1998년</span></div>
-    <div class="info"><span>신체</span><span>180cm l 68kg</span></div>
-    <div class="info"><span>학력</span><span>서울예술대학 연기전공</span></div>
-    <div class="info"><span>특기</span><span>태권도 4단 l 현대무용</span></div>
+    <div class="info"><span data-ko="생년" data-en="Birth">생년</span><span data-ko="1998년" data-en="1998">1998년</span></div>
+    <div class="info"><span data-ko="신체" data-en="Height / Weight">신체</span><span data-ko="180cm l 68kg" data-en="180cm | 68kg">180cm l 68kg</span></div>
+    <div class="info"><span data-ko="학력" data-en="Education">학력</span><span data-ko="서울예술대학 연기전공" data-en="Seoul Institute of the Arts – Acting">서울예술대학 연기전공</span></div>
+    <div class="info"><span data-ko="특기" data-en="Special Skills">특기</span><span data-ko="태권도 4단 l 현대무용" data-en="Taekwondo 4th Dan | Contemporary Dance">태권도 4단 l 현대무용</span></div>
     <div class="info"><span>KOBIS</span><span><a class="kobis-link" href="https://www.kobis.or.kr/kobis/business/mast/peop/searchPeoplePrintList.do?peopleCd=20403607&p_gubun=undefined" target="_blank">20403607</a></span></div>
   </div>
 </div>
@@ -103,7 +117,7 @@
 <button class="strip__edge strip__edge--right" type="button" aria-label="Next"></button>
 
 <div class="video-wrap">
-<div class="video-title">출연영상</div>
+<div class="video-title" data-ko="출연영상" data-en="Showreel">출연영상</div>
 <div class="video-slash"></div>
 <div class="video-frame">
 <iframe src="https://www.youtube.com/embed/x_CGZIH2ezE" allowfullscreen></iframe>
@@ -124,7 +138,6 @@
 
 <div class="strip strip--work" aria-label="Work stills">
   <div class="strip__track">
-    <!-- 기존 WORK 사진들 -->
     <button class="strip__item is-selected" type="button" data-target="work" data-src="images/work1.jpg" aria-label="work1">
       <img src="images/work1.jpg" alt="work1">
     </button>
@@ -132,7 +145,6 @@
       <img src="images/work2.jpg" alt="work2">
     </button>
 
-    <!-- 기존 SHORT FILM 아코디언 안의 사진들 -->
     <button class="strip__item" type="button" data-target="work" data-src="images/short1-1.jpeg" aria-label="short1-1">
       <img src="images/short1-1.jpeg" alt="short1-1">
     </button>
@@ -149,65 +161,155 @@
   <div class="strip__fade strip__fade--left"></div>
   <div class="strip__fade strip__fade--right"></div>
 </div>
-<div class="work-category">대표작</div>
 
-<!-- ✅ 대표작: 통일 포맷 wrapper -->
+<div class="work-category" data-ko="수상" data-en="Awards">수상</div>
+
 <div class="work-featured">
   <div class="acc-item">
-    2025 장편영화 후 광 – 노영완 감독 | 주연
-    <div class="acc-sub">38회 도쿄국제영화제 Asian Future 작품상 수상</div>
-  </div>
-
-  <div class="acc-item">
-    2025 장편영화 세계의 주인 – 윤가은 감독 | 단역
-    <div class="acc-sub">50회 토론토국제영화제 경쟁 부문 초청 상영</div>
-  </div>
-</div>
-
-<div class="accordion">
-<button class="acc-head" aria-expanded="false"><span>SHORT FILM</span><span class="acc-ico">+</span></button>
-<div class="acc-body">
-
-<div class="acc-item">
-  <div class="acc-item-text">2024 무대 – 중앙대학교 대학원 | 주연</div>
-</div>
-
-<div class="acc-item">
-  2024 카페 세잎클로버 – 한국방송예술교육진흥원 | 주연
-  <div class="acc-sub">시네마테크 KOFA l 상영</div>
-</div>
-
-<div class="acc-item">2024 소녀, 순심 – 홍익대학교 | 주연</div>
-<div class="acc-item">2023 #Value! – 고려대학교 | 주연</div>
-
-<div class="acc-item">
-  <div class="acc-item-text">
-    2023 러브랭귀지 – 동국대학교 대학원 | 주연
-    <div class="acc-sub">
-      4TH CINEMA UNKNOWN l 상영<br>
-      1TH 시네마토그래프 단편영화제 l 특별 언급<br>
-      24’ LIFTOFF FESTIVAL l 상영
+    <div class="acc-sub"
+      data-ko="20회 Chicago Asian Pop-Up Cinema - Bright Star Award🏆"
+      data-en="20th Chicago Asian Pop-Up Cinema – Bright Star Award🏆">
+      20회 Chicago Asian Pop-Up Cinema - Bright Star Award🏆
     </div>
   </div>
 </div>
 
-<div class="acc-item">2022 초록동색 – 서울예술대학교 | 주연</div>
+<div style="height:24px;"></div>
+
+<div class="work-category" data-ko="대표작" data-en="Selected Works">대표작</div>
+
+<div class="work-featured">
+<div class="acc-item">
+
+<div class="acc-item-text"
+data-ko="2025 장편영화 후 광 – 노영완 감독 | 주연"
+data-en="2025 Feature Film HALO – Directed by Noh Young-wan | Lead">
+2025 장편영화 후 광 – 노영완 감독 | 주연
+</div>
+
+<div class="acc-sub">
+
+<span
+data-ko="38회 도쿄국제영화제 Asian Future 작품상 수상🏆"
+data-en="38th Tokyo International Film Festival – Asian Future Award🏆">
+38회 도쿄국제영화제 Asian Future 작품상 수상🏆
+</span><br>
+
+<span
+data-ko="50회 홍콩국제영화제 Global Vision 초청 상영"
+data-en="50th Hong Kong International Film Festival – Global Vision Section">
+50회 홍콩국제영화제 Global Vision 초청 상영
+</span><br>
+
+<span
+data-ko="24회 피렌체 한국영화제 특별언급 수상🏆"
+data-en="24th Florence Korea Film Fest – Special Mention Award🏆">
+24회 피렌체 한국영화제 특별언급 수상🏆
+</span><br>
+
+<span
+data-ko="27회 전주국제영화제 코리안 시네마 초청 상영"
+data-en="27th Jeonju International Film Festival – Korean Cinema Section">
+27회 전주국제영화제 코리안 시네마 초청 상영
+</span><br>
+
+<span
+data-ko="14회 무주산골영화제 경쟁부분 '창' 초청 상영"
+data-en="14th Muju Film Festival – Window Section (Competition)">
+14회 무주산골영화제 경쟁부분 '창' 초청 상영
+</span>
+
+</div>
+
+</div>
+
+  <div style="height:12px;"></div>
+
+<div class="acc-item">
+
+<div class="acc-item-text"
+data-ko="2025 장편영화 세계의 주인 – 윤가은 감독 | 단역"
+data-en="2025 Feature Film The world of love – Directed by Yoon Ga-eun | Supporting">
+2025 장편영화 세계의 주인 – 윤가은 감독 | 단역
+</div>
+
+<div class="acc-sub"
+data-ko="50회 토론토국제영화제 경쟁 부문 초청 상영"
+data-en="50th Toronto International Film Festival – Official Selection">
+50회 토론토국제영화제 경쟁 부문 초청 상영
+</div>
+
+</div>
+
+<div class="accordion">
+<button class="acc-head" aria-expanded="false"><span data-ko="SHORT FILM" data-en="SHORT FILM">SHORT FILM</span><span class="acc-ico">+</span></button>
+<div class="acc-body">
+
+<div class="acc-item">
+  <div class="acc-item-text"
+  data-ko="2024 무대 – 중앙대학교 대학원 | 주연"
+  data-en="2024 Stage – Chung-Ang University Graduate School | Lead">
+  2024 무대 – 중앙대학교 대학원 | 주연
+  </div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2024 카페 세잎클로버 – 한국방송예술교육진흥원 | 주연" data-en="2024 Cafe Three-Leaf Clover – Korea Broadcasting Arts School | Lead">2024 카페 세잎클로버 – 한국방송예술교육진흥원 | 주연</div>
+<div class="acc-sub" data-ko="시네마테크 KOFA l 상영" data-en="Cinematheque KOFA Screening">시네마테크 KOFA l 상영</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2024 소녀, 순심 – 홍익대학교 | 주연" data-en="2024 Girl, Soon-sim – Hongik University | Lead">2024 소녀, 순심 – 홍익대학교 | 주연</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2023 #Value! – 고려대학교 | 주연" data-en="2023 #Value! – Korea University | Lead">2023 #Value! – 고려대학교 | 주연</div>
+</div>
+
+<div class="acc-item">
+
+<div class="acc-item-text" data-ko="2023 러브랭귀지 – 동국대학교 대학원 | 주연" data-en="2023 Love Language – Dongguk University Graduate School | Lead">2023 러브랭귀지 – 동국대학교 대학원 | 주연</div>
+
+<div class="acc-sub" data-ko="4TH CINEMA UNKNOWN l 상영" data-en="4th CINEMA UNKNOWN Screening">4TH CINEMA UNKNOWN l 상영</div>
+
+<div class="acc-sub" data-ko="1TH 시네마토그래프 단편영화제 l 특별 언급" data-en="1st Cinematograph Short Film Festival – Special Mention">1TH 시네마토그래프 단편영화제 l 특별 언급</div>
+
+<div class="acc-sub" data-ko="24’ LIFTOFF FESTIVAL l 상영" data-en="2024 LIFTOFF Festival Screening">24’ LIFTOFF FESTIVAL l 상영</div>
+</span>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2022 초록동색 – 서울예술대학교 | 주연" data-en="2022 Green Same Color – Seoul Institute of the Arts | Lead">2022 초록동색 – 서울예술대학교 | 주연</div>
+</div>
+
 </div>
 </div>
 
 <div class="accordion">
-<button class="acc-head" aria-expanded="false"><span>MUSIC VIDEO</span><span class="acc-ico">+</span></button>
+<button class="acc-head" aria-expanded="false"><span data-ko="MUSIC VIDEO" data-en="MUSIC VIDEO">MUSIC VIDEO</span><span class="acc-ico">+</span></button>
 <div class="acc-body">
-<div class="acc-item">2023 양다일 – 꽃 | 주연</div>
-<div class="acc-item">2022 한동근 – 사랑인걸 | 주연</div>
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2023 양다일 – 꽃 | 주연" data-en="2023 Yang Da-il – Flower | Lead">2023 양다일 – 꽃 | 주연</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2022 한동근 – 사랑인걸 | 주연" data-en="2022 Han Dong-geun – Because I Love You | Lead">2022 한동근 – 사랑인걸 | 주연</div>
+</div>
 </div>
 </div>
 
 <div class="accordion">
-<button class="acc-head" aria-expanded="false"><span>THEATRE</span><span class="acc-ico">+</span></button>
+<button class="acc-head" aria-expanded="false"><span data-ko="THEATRE" data-en="THEATRE">THEATRE</span><span class="acc-ico">+</span></button>
 <div class="acc-body">
-<div class="acc-item">2019 Midnight Travel | 무용수</div>
-<div class="acc-item">2018 Eat (무언극) | 주연</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2019 Midnight Travel | 무용수" data-en="2019 Midnight Travel | Dancer">2019 Midnight Travel | 무용수</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2018 Eat (무언극) | 주연" data-en="2018 Eat (Mime) | Lead">2018 Eat (무언극) | 주연</div>
+</div>
+
 </div>
 </div>
 
@@ -219,17 +321,56 @@
 <div class="page-header"><h1>about</h1><div class="slash"></div></div>
 
 <div class="about-wrap">
-<div class="about-title">방향성</div>
-<div class="about-text">안녕하세요 저는 더 깊은 감정을 바라볼 수 있는 배우이자 사람이 되고자,<br>저에게 주어지는 만남과 경험을 진심으로 마주하며 하루를 살아가고자 합니다.<br>감사하게도 좋은 인연을 만나 작품을 이어가고 있으며,<br>제가 꿈꾸는 좋은 배우가 되도록 뜨겁게 살아가겠습니다.</div>
+
+<div class="about-title"
+data-ko="방향성"
+data-en="Artist Statement">
+방향성
 </div>
 
-<div class="press-title">보도 · 기사</div>
-<div class="press">
-<a class="press-item" href="https://cine21.com/news/view/?mag_id=108779" target="_blank">시네21 [인터뷰] 보이지 않던 이들의 삶에 촛불 하나를, &lt;후광&gt; 노영완 감독, 최강현 배우</a>
-<a class="press-item" href="https://www.newsprime.co.kr/news/article/?no=708243" target="_blank">노영완 감독 데뷔작 &lt;후광&gt;, 제38회 도쿄국제영화제 경쟁 부문 진출</a>
-<a class="press-item" href="https://2025.tiff-jp.net/news/en/?p=20157" target="_blank">[Event Report] The Burden of Family Undoes a Bright Future</a>
-<a class="press-item" href="https://www.screendaily.com/reviews/halo-review-gruelling-south-korean-debut-leans-into-the-grind-of-the-gig-economy/5210525.article?utm_source=chatgpt.com" target="_blank">[SCREENDAILY] Gruelling South Korean debut leans into the grind of the gig economy</a>
+<div class="about-text"
+data-ko="안녕하세요 저는 더 깊은 감정을 바라볼 수 있는 배우이자 사람이 되고자,<br>
+저에게 주어지는 만남과 경험을 진심으로 마주하며 하루를 살아가고자 합니다.<br>
+감사하게도 좋은 인연을 만나 작품을 이어가고 있으며,<br>
+제가 꿈꾸는 좋은 배우가 되도록 뜨겁게 살아가겠습니다."
+data-en="Hello, I aspire to become both an actor and a person who can look deeply into human emotion.<br>
+I try to live each day sincerely, embracing the encounters and experiences that come my way.<br>
+Fortunately, I continue working through meaningful collaborations,<br>
+and I will keep living passionately to become the actor I aspire to be.">
+
+안녕하세요 저는 더 깊은 감정을 바라볼 수 있는 배우이자 사람이 되고자,<br>
+저에게 주어지는 만남과 경험을 진심으로 마주하며 하루를 살아가고자 합니다.<br>
+감사하게도 좋은 인연을 만나 작품을 이어가고 있으며,<br>
+제가 꿈꾸는 좋은 배우가 되도록 뜨겁게 살아가겠습니다.
+
 </div>
+
+</div>
+
+<div class="press-title"
+data-ko="보도 · 기사"
+data-en="Press · Articles">
+보도 · 기사
+</div>
+
+<div class="press">
+<a class="press-item" href="https://cine21.com/news/view/?mag_id=108779" target="_blank">
+시네21 [인터뷰] 보이지 않던 이들의 삶에 촛불 하나를, &lt;후광&gt; 노영완 감독, 최강현 배우
+</a>
+
+<a class="press-item" href="https://www.newsprime.co.kr/news/article/?no=708243" target="_blank">
+노영완 감독 데뷔작 &lt;후광&gt;, 제38회 도쿄국제영화제 경쟁 부문 진출
+</a>
+
+<a class="press-item" href="https://2025.tiff-jp.net/news/en/?p=20157" target="_blank">
+[Event Report] The Burden of Family Undoes a Bright Future
+</a>
+
+<a class="press-item" href="https://www.screendaily.com/reviews/halo-review-gruelling-south-korean-debut-leans-into-the-grind-of-the-gig-economy/5210525.article?utm_source=chatgpt.com" target="_blank">
+[SCREENDAILY] Gruelling South Korean debut leans into the grind of the gig economy
+</a>
+</div>
+
 </div>
 </section>
 
@@ -242,6 +383,7 @@
 <div class="contact-line">EMAIL · <a href="mailto:choiganghyun@naver.com">choiganghyun@naver.com</a></div>
 <div class="contact-line">INSTA · <a href="https://www.instagram.com/choigang_98" target="_blank">@choigang_98</a></div>
 </div>
+
 </div>
 </section>
 
@@ -251,5 +393,38 @@
 </div>
 
 <script src="script.js"></script>
+
+<script>
+let lang="ko";
+
+const toggleMain=document.getElementById("langToggle");
+const toggleTop=document.getElementById("langToggleTop");
+
+const koEls=document.querySelectorAll(".lang-ko");
+const enEls=document.querySelectorAll(".lang-en");
+
+function applyLang(){
+  document.querySelectorAll("[data-ko]").forEach(el=>{
+    el.innerHTML=(lang==="ko"?el.dataset.ko:el.dataset.en).replace(/<br>/g,"<br>");
+  });
+
+  koEls.forEach(el=>el.classList.toggle("active",lang==="ko"));
+  enEls.forEach(el=>el.classList.toggle("active",lang==="en"));
+}
+
+toggleMain.onclick=()=>{
+  lang=(lang==="ko")?"en":"ko";
+  applyLang();
+};
+
+if(toggleTop){
+  toggleTop.onclick=()=>{
+    lang=(lang==="ko")?"en":"ko";
+    applyLang();
+  };
+}
+</script>
+
+
 </body>
 </html>
