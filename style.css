@@ -259,13 +259,24 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 
 /* 모바일 */
 @media (max-width:900px){
+
+  .menu-panel{display:none !important;}
+  .menu-panel a{display:none !important;}
+
   .work__featured img{height:240px;}
+
+  .menu-inline{position:absolute;right:0;top:50%;display:flex;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;}
+  .menu-inline a{font-size:14px;letter-spacing:.2em;cursor:pointer;}
+  body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
+
+
+  body.menu-open #langToggleTop,
+  body.menu-open #menuBtn{opacity:0;transform:translateX(-40px);transition:transform .35s ease;}
 
   .video-wrap{margin-top:22px;}
   .video-title{font-size:13px;}
   .video-slash{width:120px;opacity:.6;}
 
-  /* ✅ 박스 자체를 16:9로 줄이기 */
   .video-frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;}
   .video-frame iframe{width:100%;height:100%;display:block;}
 }
