@@ -62,8 +62,8 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 .work-shots img{width:100%;max-width:260px;height:auto;opacity:.95;transition:transform .6s ease,opacity .6s ease;}
 .work-shots img:hover{transform:scale(1.03);opacity:1;}
 
-.accordion{margin-top:56px;}
-.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:18px 0;color:var(--text);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:.85;border-bottom:1px solid var(--line);font-size:var(--fs-body);}
+.accordion{margin-top:12px;}
+.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:18px 0;color:var(--text);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:.85;border-bottom:1px solid var(--line);font-size:15px;}
 .acc-ico{opacity:.8;margin-left:10px;font-size:var(--fs-body);}
 .acc-body{max-height:0;overflow:hidden;transition:max-height var(--fade) ease;opacity:.75;}
 .acc-body.open{padding:16px 0 0;}
@@ -105,8 +105,9 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 .lang-btn span.active{opacity:1;}
 
 /* ===== MENU (topnav) ===== */
-.menu-btn{background:none;border:none;color:var(--text);font-size:12.3px;letter-spacing:.12em;opacity:.7;cursor:pointer;transition:opacity .2s ease,transform .2s ease;}
+.menu-btn{display:inline-flex;align-items:center;justify-content:center;background:none;border:none;color:var(--text);font-size:12.3px;letter-spacing:.12em;opacity:.7;cursor:pointer;transition:opacity .2s ease,transform .2s ease;padding:0;line-height:1;height:auto;width:auto;max-width:max-content;position:relative;z-index:999;}
 .menu-btn:hover{opacity:1;transform:translateY(-1px);}
+.menu-btn,.menu-inline a{cursor:pointer!important;}
 
 .menu-panel{position:fixed;top:60px;right:80px;display:flex;flex-direction:column;align-items:flex-end;gap:18px;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s ease,transform .25s ease;}
 
@@ -187,7 +188,6 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 
   .page-header h1,.about-title,.press-title,.video-title{font-size:var(--m-title)!important;}
   .info,.work-title,.work-desc,.acc-head,.acc-item,.acc-work-text,.about-text,.press-item{font-size:var(--m-body)!important;}
-  .acc-sub{font-size:var(--m-sub)!important;}
 
   /* ✅ contact는 연락처니까 더 잘 보이게(좌측 시작 + 본문보다 크게) */
   #contact .contact{font-size:calc(var(--m-body) + 4px)!important;align-items:flex-start;text-align:left;line-height:2 !important;}
@@ -223,6 +223,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 
 /* ✅ WORK 상단 featured 사진 크기 제한 */
 .work__featured img{height:360px;object-fit:contain;background:rgba(255,255,255,.04);}
+.work__featured{margin-top:22px;}
 
 /* ✅ PROFILE: 무조건 2열 (모바일 포함) */
 .profile-wrap{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:18px;}
@@ -244,8 +245,11 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   /* WORK */
   .work-title{font-size:14px;}
   .work-desc{font-size:16px;}
-  .acc-item{font-size:15px;}
-  .acc-sub{font-size:13px;}
+
+  .accordion .acc-item{padding:2px 0;}
+  .accordion .acc-item-text{font-size:15px;}
+  .accordion .acc-sub{font-size:3px;}
+  .accordion .acc-sub{margin-top:1px;}
 
   /* ✅ 대표작만 강조 */
   .work-featured .acc-item{font-size:18px;}
@@ -265,13 +269,10 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 
   .work__featured img{height:240px;}
 
-  .menu-inline{position:absolute;right:0;top:50%;display:flex;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;}
+  .menu-inline{position:absolute;right:0;top:50%;display:flex;align-items:center;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;z-index:30;} body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
   .menu-inline a{font-size:14px;letter-spacing:.2em;cursor:pointer;}
-  body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
 
-
-  body.menu-open #langToggleTop,
-  body.menu-open #menuBtn{opacity:0;transform:translateX(-40px);transition:transform .35s ease;}
+  body.menu-open #langToggleTop,body.menu-open #menuBtn{opacity:0;pointer-events:none;transform:translateX(-40px);transition:transform .35s ease;}
 
   .video-wrap{margin-top:22px;}
   .video-title{font-size:13px;}
