@@ -1,294 +1,445 @@
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#111111;--text:rgba(255,255,255,.92);--line:rgba(255,255,255,.18);--fade:360ms;--max:1100px;--fs-title:26px;--fs-body:21px;--fs-sub:16px;}
-body{font-family:"Inter","Noto Serif KR",sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden;font-size:var(--fs-body);}
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choi Gang Hyun | Actor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg bg-main"></div>
+<div class="bg bg-sub"></div>
+<div class="bg bg-dim"></div>
+<div class="menu-blur"></div>
 
-.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-3;}
-.bg-main{background:url(images/main1.jpg) center/contain no-repeat;background-color:#111111;animation:breathe 14s ease-in-out infinite;}
-.bg-sub{z-index:-2;background:url(images/main1.jpg) center/cover no-repeat;filter:blur(18px);opacity:0;transition:opacity var(--fade) ease;transform:scale(1.05);}
-.bg-dim{z-index:-1;background:rgba(17,17,17,.35);opacity:0;transition:opacity var(--fade) ease;}
-body.sub .bg-sub,body.sub .bg-dim{opacity:1;}
-.bg-dim::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.045);pointer-events:none;}
-@keyframes breathe{0%{transform:scale(1);}50%{transform:scale(1.02);}100%{transform:scale(1);}}
+<header class="topnav" id="topNav">
+<div class="topnav-guard" id="topnavGuard"></div>
+<div class="topnav-inner">
 
-.topnav{position:fixed;top:0;left:0;width:100%;z-index:10;padding:22px 18px;display:none;pointer-events:auto;}
-body.sub .topnav{display:block;}
-.topnav-inner{display:flex;justify-content:flex-end;gap:14px;pointer-events:auto;position:relative;z-index:2;width:min(var(--max),90vw);margin:0 auto;}
-.topnav-link{font-size:12.3px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;opacity:.7;transition:opacity .2s ease,transform .2s ease;}
-.topnav-link:hover{opacity:1;transform:translateY(-1px);}
-.topnav-link.is-active{opacity:1;}
-.topnav-guard{position:absolute;top:0;left:0;width:100%;height:72px;opacity:0;pointer-events:none;transition:opacity .2s ease;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(17,17,17,.25);z-index:1;}
-body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
+<button class="icon-btn lang-btn" id="langToggleTop">
+  <span class="lang-ko active">KR</span>
+  <span class="lang-en">EN</span>
+</button>
 
-.section{position:absolute;top:0;left:0;width:100%;height:100vh;opacity:0;pointer-events:none;transition:opacity var(--fade) ease;overflow-y:auto;}
-.section.active{opacity:1;pointer-events:auto;}
+<div class="menu-inline">
+  <a data-target="main">M</a>
+  <a data-target="profile">P</a>
+  <a data-target="work">W</a>
+  <a data-target="about">A</a>
+  <a data-target="contact">C</a>
+</div>
 
-.page{transform:scale(.8);transform-origin:top left;width:min(var(--max),90vw);margin:0 auto;padding:100px 0 80px;font-size:var(--fs-body);}
-#contact .page{transform:scale(.5);transform-origin:center;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
-#contact .page-header h1{font-size:calc(var(--fs-title) * 1.3);}
+<button class="menu-btn" id="menuBtn"></button>
 
-.poster{position:relative;width:100%;height:100vh;display:flex;justify-content:flex-end;align-items:flex-start;padding-top:22vh;text-align:right;padding-right:19vw;}
-.poster-text{display:flex;flex-direction:column;align-items:flex-end;}
-.poster-menu{display:flex;flex-direction:column;gap:20px;}
-.poster-en{font-size:18.2px;letter-spacing:.14em;opacity:.85;margin-bottom:12px;text-transform:uppercase;line-height:1.65;}
-.poster-ko{font-size:70.2px;font-weight:400;letter-spacing:.12em;margin:18px 0 32px;font-family:"Noto Serif KR","Inter",sans-serif;line-height:1.25;}
-.poster-link{background:none;border:none;color:var(--text);font-size:15.6px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;cursor:pointer;transition:opacity .2s ease,transform .2s ease;line-height:1.7;}
-.poster-link:hover{opacity:1;transform:translateY(-1px);}
-.poster-icons{position:absolute;top:22px;right:19vw;display:flex;gap:12px;z-index:5;pointer-events:auto;}
-.icon-btn{width:auto;height:auto;display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:1;transition:opacity .2s ease,transform .2s ease;color:#fff;font-size:13px;letter-spacing:.08em;cursor:pointer;}
-.icon-btn:hover{opacity:1;transform:translateY(-1px);}
-.icon-btn img{width:26px;height:26px;display:block;opacity:1;}
-#main .poster-text{transform:scale(.75);transform-origin:top right;}
+<div class="menu-panel" id="menuPanel">
+  <a href="#main" data-target="main">main</a>
+  <a href="#profile" data-target="profile">profile</a>
+  <a href="#work" data-target="work">work</a>
+  <a href="#about" data-target="about">about</a>
+  <a href="#contact" data-target="contact">contact</a>
+</div>
 
-.page-header h1{font-size:var(--fs-title);font-weight:400;letter-spacing:.12em;text-transform:uppercase;}
-.slash{width:160px;height:1px;background:var(--text);opacity:.4;margin:14px 0 0;}
+</div>
+</header>
 
-.profile-wrap{display:flex;gap:44px;margin-top:46px;align-items:flex-start;}
-.profile-left{flex:0 0 500px;}
-.profile-left img{width:100%;height:auto;}
-.profile-right{flex:1;display:flex;flex-direction:column;gap:14px;padding-top:4px;}
-.info{display:flex;justify-content:space-between;gap:16px;line-height:1.95;letter-spacing:.02em;opacity:.78;font-size:var(--fs-body);}
-.info span:first-child{min-width:70px;opacity:.65;}
-.kobis-link{opacity:.85;text-decoration:none;}
-.kobis-link:hover{opacity:1;}
+<section id="main" class="section active">
+<div class="poster">
+  <div class="poster-icons" aria-label="Social links">
 
-.profile-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.profile-grid img{width:100%;height:auto;}
+    <button class="icon-btn lang-btn" id="langToggle"><span class="lang-ko active">KR</span> <span class="lang-en">EN</span></button>
+    <a class="icon-btn" href="https://www.instagram.com/choigang_98" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="images/icon-instagram.svg" alt="">
+    </a>
+    <a class="icon-btn" href="mailto:choiganghyun@naver.com" aria-label="Email">
+      <img src="images/icon-mail.svg" alt="">
+    </a>
+    <a class="icon-btn" href="tel:+821038545366" aria-label="Phone">
+      <img src="images/icon-call.svg" alt="">
+    </a>
+    
+  </div><div class="poster-text">
+<div class="poster-en">Choi Gang Hyun</div>
+<div class="poster-en">ACTOR / KOREAN FILM</div>
+<div class="poster-ko">최강현</div>
+<nav class="poster-menu">
+<button class="poster-link" data-target="profile">profile</button>
+<button class="poster-link" data-target="work">work</button>
+<button class="poster-link" data-target="about">about</button>
+<button class="poster-link" data-target="contact">contact</button>
+</nav>
+</div>
+</div>
+</section>
 
-.work-block{display:flex;gap:44px;margin-top:46px;align-items:flex-start;}
-.work-text{flex:1;max-width:520px;}
-.work-title{line-height:1.85;letter-spacing:.02em;opacity:.88;margin-bottom:6px;white-space:nowrap;font-size:calc(var(--fs-body) + 2px);}
-.work-desc{line-height:1.9;letter-spacing:.02em;opacity:.72;font-size:var(--fs-body);}
-.work-shots{flex:0 0 40%;display:flex;gap:14px;align-items:flex-start;}
-.work-shots img{width:100%;max-width:260px;height:auto;opacity:.95;transition:transform .6s ease,opacity .6s ease;}
-.work-shots img:hover{transform:scale(1.03);opacity:1;}
+<section id="profile" class="section">
+<div class="page">
+<div class="page-header"><h1>profile</h1><div class="slash"></div></div>
 
-.accordion{margin-top:12px;}
-.acc-head{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:18px 0;color:var(--text);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:.85;border-bottom:1px solid var(--line);font-size:15px;}
-.acc-ico{opacity:.8;margin-left:10px;font-size:var(--fs-body);}
-.acc-body{max-height:0;overflow:hidden;transition:max-height var(--fade) ease;opacity:.75;}
-.acc-body.open{padding:16px 0 0;}
-.acc-item{line-height:1.95;letter-spacing:.02em;padding:6px 0;font-size:var(--fs-body);}
-.acc-item-text{display:block;}
+<div class="profile-wrap">
+  <!-- ✅ 대표 이미지: profile1 유지 (단, data-featured만 추가) -->
+  <div class="profile-left">
+    <img src="images/profile1.jpg" alt="profile1" class="zoom" data-featured="profile">
+  </div>
 
-.acc-work{display:flex;gap:28px;align-items:flex-start;padding:12px 0;}
-.acc-work-text{flex:1;line-height:1.95;letter-spacing:.02em;opacity:.78;font-size:var(--fs-body);}
-.acc-work-shots{flex:0 0 auto;display:flex;gap:12px;align-items:flex-start;}
-.acc-work-shots img{width:100%;max-width:180px;height:auto;opacity:.95;}
-.acc-sub{margin-top:8px;line-height:1.85;letter-spacing:.02em;opacity:.65;font-size:var(--fs-sub);}
+  <div class="profile-right">
+    <div class="info"><span data-ko="생년" data-en="Birth">생년</span><span data-ko="1998년" data-en="1998">1998년</span></div>
+    <div class="info"><span data-ko="신체" data-en="Height / Weight">신체</span><span data-ko="180cm l 68kg" data-en="180cm | 68kg">180cm l 68kg</span></div>
+    <div class="info"><span data-ko="학력" data-en="Education">학력</span><span data-ko="서울예술대학 연기전공" data-en="Seoul Institute of the Arts – Acting">서울예술대학 연기전공</span></div>
+    <div class="info"><span data-ko="특기" data-en="Special Skills">특기</span><span data-ko="태권도 4단 l 현대무용" data-en="Taekwondo 4th Dan | Contemporary Dance">태권도 4단 l 현대무용</span></div>
+    <div class="info"><span>KOBIS</span><span><a class="kobis-link" href="https://www.kobis.or.kr/kobis/business/mast/peop/searchPeoplePrintList.do?peopleCd=20403607&p_gubun=undefined" target="_blank">20403607</a></span></div>
+  </div>
+</div>
 
-.about-wrap{margin-top:46px;max-width:860px;}
-.about-title{font-weight:400;letter-spacing:.04em;opacity:.85;margin-bottom:18px;font-size:var(--fs-title);}
-.about-text{letter-spacing:.02em;line-height:2.05;opacity:.76;word-break:keep-all;line-break:strict;font-size:var(--fs-body);}
-.press-title{margin-top:46px;font-weight:400;letter-spacing:.04em;opacity:.85;font-size:var(--fs-title);}
-.press{margin-top:14px;border-top:1px solid var(--line);}
-.press-item{display:block;padding:22px 0;border-bottom:1px solid var(--line);line-height:1.75;letter-spacing:.02em;opacity:.88;transition:opacity .2s ease,transform .2s ease;font-size:var(--fs-body);}
-.press-item:hover{opacity:1;transform:translateX(2px);}
+<!-- ✅ profile-grid 제거 → profile strip 추가 -->
+<div class="strip strip--profile" aria-label="Profile stills">
+  <div class="strip__track">
+    <button class="strip__item is-selected" type="button" data-target="profile" data-src="images/profile1.jpg" aria-label="profile1">
+      <img src="images/profile1.jpg" alt="profile1">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile2.jpg" aria-label="profile2">
+      <img src="images/profile2.jpg" alt="profile2">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile3.jpg" aria-label="profile3">
+      <img src="images/profile3.jpg" alt="profile3">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile4.jpg" aria-label="profile4">
+      <img src="images/profile4.jpg" alt="profile4">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile5.jpg" aria-label="profile5">
+      <img src="images/profile5.jpg" alt="profile5">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile6.jpg" aria-label="profile6">
+      <img src="images/profile6.jpg" alt="profile6">
+    </button>
+    <button class="strip__item" type="button" data-target="profile" data-src="images/profile7.jpg" aria-label="profile7">
+      <img src="images/profile7.jpg" alt="profile7">
+    </button>
+  </div>
+  <div class="strip__fade strip__fade--left"></div>
+  <div class="strip__fade strip__fade--right"></div>
+</div>
 
-.contact{margin-top:46px;display:flex;flex-direction:column;gap:18px;line-height:2;letter-spacing:.04em;opacity:.9;font-size:calc(var(--fs-body) + 12px);}
-.contact a{opacity:.85;transition:opacity .2s ease,transform .2s ease;}
-.contact a:hover{opacity:1;transform:translateX(2px);}
+<button class="strip__edge strip__edge--left" type="button" aria-label="Previous"></button>
+<button class="strip__edge strip__edge--right" type="button" aria-label="Next"></button>
 
-.video-wrap{margin-top:70px;max-width:860px;}
-.video-title{letter-spacing:.08em;opacity:.9;margin-bottom:14px;font-size:var(--fs-body);}
-.video-slash{width:220px;height:1px;background:var(--text);opacity:.35;margin:0 0 24px;}
-.video-frame{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--line);overflow:hidden;}
-.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+<div class="video-wrap">
+<div class="video-title" data-ko="출연영상" data-en="Showreel">출연영상</div>
+<div class="video-slash"></div>
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/x_CGZIH2ezE" allowfullscreen></iframe>
+</div>
+</div>
 
-.zoom{cursor:pointer;}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.86);display:none;align-items:center;justify-content:center;z-index:999;padding:24px;}
-.lightbox.open{display:flex;}
-.lb-img{max-width:min(92vw,980px);max-height:86vh;object-fit:contain;}
-.lb-close{position:fixed;top:18px;right:18px;width:44px;height:44px;border:none;background:none;color:#fff;cursor:pointer;opacity:.85;transition:opacity .2s ease;font-size:44.2px;}
-.lb-close:hover{opacity:1;}
+</div>
+</section>
 
-.lang-btn span{opacity:.4;transition:opacity .2s ease;}
-.lang-btn span.active{opacity:1;}
+<section id="work" class="section">
+<div class="page">
+<div class="page-header"><h1>work</h1><div class="slash"></div></div>
 
-/* ===== MENU (topnav) ===== */
-.menu-btn{display:inline-flex;align-items:center;justify-content:center;background:none;border:none;color:var(--text);font-size:12.3px;letter-spacing:.12em;opacity:.7;cursor:pointer;transition:opacity .2s ease,transform .2s ease;padding:0;line-height:1;height:auto;width:auto;max-width:max-content;position:relative;z-index:999;}
-.menu-btn:hover{opacity:1;transform:translateY(-1px);}
-.menu-btn,.menu-inline a{cursor:pointer!important;}
+<!-- ✅ WORK 상단: 대표 큰 이미지 + strip -->
+<div class="work__featured">
+  <img src="images/work1.jpg" alt="work featured" class="zoom" data-featured="work">
+</div>
 
-.menu-panel{position:fixed;top:60px;right:80px;display:flex;flex-direction:column;align-items:flex-end;gap:18px;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s ease,transform .25s ease;}
+<div class="strip strip--work" aria-label="Work stills">
+  <div class="strip__track">
+    <button class="strip__item is-selected" type="button" data-target="work" data-src="images/work1.jpg" aria-label="work1">
+      <img src="images/work1.jpg" alt="work1">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/work2.jpg" aria-label="work2">
+      <img src="images/work2.jpg" alt="work2">
+    </button>
 
-.menu-panel.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+    <button class="strip__item" type="button" data-target="work" data-src="images/short1-1.jpeg" aria-label="short1-1">
+      <img src="images/short1-1.jpeg" alt="short1-1">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/short1-2.jpeg" aria-label="short1-2">
+      <img src="images/short1-2.jpeg" alt="short1-2">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/short2-1.jpeg" aria-label="short2-1">
+      <img src="images/short2-1.jpeg" alt="short2-1">
+    </button>
+    <button class="strip__item" type="button" data-target="work" data-src="images/short2-2.jpg" aria-label="short2-2">
+      <img src="images/short2-2.jpg" alt="short2-2">
+    </button>
+  </div>
+  <div class="strip__fade strip__fade--left"></div>
+  <div class="strip__fade strip__fade--right"></div>
+</div>
 
-.menu-panel a{font-size:18px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;transition:opacity .2s ease,transform .2s ease;}
-.menu-panel a:hover{opacity:1;transform:translateY(-1px);}
-.menu-wrap{position:relative;}
+<div class="work-category" data-ko="수상" data-en="Awards">수상</div>
 
-@media (max-width:900px){
-  body{overflow:hidden;}
+<div class="work-featured">
+  <div class="acc-item">
+    <div class="acc-sub"
+      data-ko="20회 Chicago Asian Pop-Up Cinema - Bright Star Award🏆"
+      data-en="20th Chicago Asian Pop-Up Cinema – Bright Star Award🏆">
+      20회 Chicago Asian Pop-Up Cinema - Bright Star Award🏆
+    </div>
+  </div>
+</div>
 
-  /* 모바일 메인 포스터 */
-  .bg-main{background:url(images/main1-mobile.jpg) center/contain no-repeat;background-color:#111111;}
-  .bg-sub{background:url(images/main1-mobile.jpg) center/cover no-repeat;}
-  .poster{justify-content:flex-end;align-items:flex-start;padding-top:70px;padding-right:18px;text-align:right;}
-  .poster-text{align-items:flex-end;transform:none;}
-  .poster-en{font-size:12px;line-height:1.5;margin-bottom:8px;letter-spacing:.14em;}
-  .poster-ko{font-size:36px;line-height:1.2;margin:12px 0 16px;letter-spacing:.12em;}
-  .poster-menu{gap:12px;}
-  .poster-link{font-size:11px;line-height:1.6;}
-  .poster-icons{top:16px;right:18px;gap:10px;}
-  .icon-btn{width:32px;height:32px;}
-  .icon-btn img{width:20px;height:20px;}
-  
-  /* ✅ 핵심: 모바일에서는 scale로 줄이지 말고 '진짜 폭'으로 맞추기 (오른쪽 여백 해결) */
-  .page{transform:none;width:100%;margin:0;padding:88px 18px 70px;}
+<div style="height:24px;"></div>
 
-  /* ✅ 우측 상단 메뉴가 덮치지 않게 */
-  .topnav{padding:16px 12px;}
-  .topnav-link{font-size:11px;}
-  .topnav-inner{display:flex;justify-content:flex-end;gap:14px;align-items:center;}
+<div class="work-category" data-ko="대표작" data-en="Selected Works">대표작</div>
 
-  /* 1) profile 오른쪽 여백 줄이기 + 좌우 동일 */
-  .profile-wrap{flex-direction:column;gap:22px;margin-top:34px;}
-  .profile-left{flex:auto;width:100%;}
-  .profile-right{gap:10px;}
+<div class="work-featured">
+<div class="acc-item">
 
-  /* 2) work 전체 글씨 조금 다운 (세계의 주인 라인 잘림 방지) */
-  .work-title{font-size:18px;line-height:1.75;}
-  .work-desc{font-size:15px;line-height:1.8;}
+<div class="acc-item-text"
+data-ko="2025 장편영화 후 광 – 노영완 감독 | 주연"
+data-en="2025 Feature Film HALO – Directed by Noh Young-wan | Lead">
+2025 장편영화 후 광 – 노영완 감독 | 주연
+</div>
 
-  .work-block{flex-direction:column;gap:16px;margin-top:34px;}
-  .work-text{max-width:100%;}
-  .work-shots{flex:auto;width:100%;}
-  .work-shots img{max-width:48%;}
+<div class="acc-sub">
 
-  /* 3) SHORT FILM 스틸 들어간 항목: 작품명 위 / 스틸 아래로(세로) */
-  .acc-head{font-size:15px;padding:16px 0;}
-  .acc-ico{font-size:15px;}
-  .accordion .acc-item-text{font-size:12px!important;line-height:1.5;} .accordion .acc-sub{font-size:10px!important;line-height:1.5;margin-top:2px;}
-  .acc-work{flex-direction:column;gap:12px;align-items:flex-start;padding:14px 0;}
-  .acc-work-text{font-size:15px;line-height:1.8;}
-  .acc-work-shots{width:100%;display:flex;gap:10px;}
-  .acc-work-shots img{max-width:48%;}
-  .acc-sub{font-size:12px;line-height:1.8;margin-top:6px;}
+<span
+data-ko="38회 도쿄국제영화제 Asian Future 작품상 수상🏆"
+data-en="38th Tokyo International Film Festival – Asian Future Award🏆">
+38회 도쿄국제영화제 Asian Future 작품상 수상🏆
+</span><br>
 
-  /* profile grid */
-  .profile-grid{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px;}
+<span
+data-ko="50회 홍콩국제영화제 Global Vision 초청 상영"
+data-en="50th Hong Kong International Film Festival – Global Vision Section">
+50회 홍콩국제영화제 Global Vision 초청 상영
+</span><br>
 
-  /* 4) about 오른쪽 여백 해결 + 글씨 모바일 톤으로 다운 */
-  .about-wrap{max-width:100%;}
-  .about-title{font-size:16px;margin-bottom:12px;}
-  .about-text{font-size:15px;line-height:1.95;}
-  .press-title{font-size:16px;margin-top:34px;}
-  .press-item{font-size:15px;line-height:1.7;padding:18px 0;}
+<span
+data-ko="24회 피렌체 한국영화제 특별언급 수상🏆"
+data-en="24th Florence Korea Film Fest – Special Mention Award🏆">
+24회 피렌체 한국영화제 특별언급 수상🏆
+</span><br>
 
-  /* 5) contact: 모바일에서는 가운데 말고 좌측 시작 + 따로 노는 transform 잔재 완전 제거 */
-  #contact .page{transform:none !important;transform-origin:top left !important;min-height:100vh !important;display:flex !important;flex-direction:column !important;justify-content:center !important;}
-  .contact{margin-top:34px;align-items:flex-start;gap:10px;font-size:16px;line-height:1.9;letter-spacing:.03em;text-align:left;}
+<span
+data-ko="20회 시카고 아시안 팝업 시네마 Bright Star Award 수상🏆"
+data-en="20th Chicago Asian Pop-Up Cinema – Bright Star Award🏆">
+20회 시카고 아시안 팝업 시네마 Bright Star Award 수상🏆
+</span><br>
 
-  /* 라이트박스는 그대로 */
-  .video-wrap{margin-top:46px;}
-  .video-title{font-size:15px;}
+<span
+data-ko="27회 전주국제영화제 멕시코국립시네테카 개봉지원상 수상🏆"
+data-en="27th Jeonju International Film Festival – Mexico National Cineteca Distribution Support Award🏆">
+27회 전주국제영화제 멕시코국립시네테카 개봉지원상 수상🏆
+</span><br>
 
-  /* ✅ 모바일 글씨 통일 시스템 */
-  :root{--m-title:15px;--m-body:14px;--m-sub:12px;}
+<span
+data-ko="12회 사우디국제영화제 Spotlight on Korean Cinema 초청"
+data-en="12th Saudi International Film Festival – Spotlight on Korean Cinema">
+12회 사우디국제영화제 Spotlight on Korean Cinema 초청
+</span>
 
-  .page-header h1,.about-title,.press-title,.video-title{font-size:var(--m-title)!important;}
-  .info,.work-title,.work-desc,.acc-head,.acc-work-text,.about-text,.press-item{font-size:var(--m-body)!important;}
+</div>
 
-  /* ✅ contact는 연락처니까 더 잘 보이게(좌측 시작 + 본문보다 크게) */
-  #contact .contact{font-size:calc(var(--m-body) + 4px)!important;align-items:flex-start;text-align:left;line-height:2 !important;}
-  #contact .contact a{word-break:break-word;}
+</div>
+
+  <div style="height:12px;"></div>
+
+<div class="acc-item">
+
+<div class="acc-item-text"
+data-ko="2025 장편영화 세계의 주인 – 윤가은 감독 | 단역"
+data-en="2025 Feature Film The world of love – Directed by Yoon Ga-eun | Supporting">
+2025 장편영화 세계의 주인 – 윤가은 감독 | 단역
+</div>
+
+<div class="acc-sub"
+data-ko="50회 토론토국제영화제 경쟁 부문 초청 상영"
+data-en="50th Toronto International Film Festival – Official Selection">
+50회 토론토국제영화제 경쟁 부문 초청 상영
+</div>
+
+</div>
+
+<div class="accordion">
+<button class="acc-head" aria-expanded="false"><span data-ko="SHORT FILM" data-en="SHORT FILM">SHORT FILM</span><span class="acc-ico">+</span></button>
+<div class="acc-body">
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2026 벽간소리 – 한양대학교 대학원 | 주연" data-en="2026 Sound Between Walls – Hanyang University Graduate School | Lead">2026 벽간소리 – 한양대학교 대학원 | 주연</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2024 무대 – 중앙대학교 대학원 | 주연" data-en="2024 Stage – Chung-Ang University Graduate School | Lead">2024 무대 – 중앙대학교 대학원 | 주연</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2024 카페 세잎클로버 – 한국방송예술교육진흥원 | 주연" data-en="2024 Cafe Three-Leaf Clover – Korea Broadcasting Arts School | Lead">2024 카페 세잎클로버 – 한국방송예술교육진흥원 | 주연</div>
+<div class="acc-sub" data-ko="시네마테크 KOFA l 상영" data-en="Cinematheque KOFA Screening">시네마테크 KOFA l 상영</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2024 소녀, 순심 – 홍익대학교 | 주연" data-en="2024 Girl, Soon-sim – Hongik University | Lead">2024 소녀, 순심 – 홍익대학교 | 주연</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2023 #Value! – 고려대학교 | 주연" data-en="2023 #Value! – Korea University | Lead">2023 #Value! – 고려대학교 | 주연</div>
+</div>
+
+<div class="acc-item">
+
+<div class="acc-item-text" data-ko="2023 러브랭귀지 – 동국대학교 대학원 | 주연" data-en="2023 Love Language – Dongguk University Graduate School | Lead">2023 러브랭귀지 – 동국대학교 대학원 | 주연</div>
+
+<div class="acc-sub" data-ko="4TH CINEMA UNKNOWN l 상영" data-en="4th CINEMA UNKNOWN Screening">4TH CINEMA UNKNOWN l 상영</div>
+
+<div class="acc-sub" data-ko="1TH 시네마토그래프 단편영화제 l 특별 언급" data-en="1st Cinematograph Short Film Festival – Special Mention">1TH 시네마토그래프 단편영화제 l 특별 언급</div>
+
+<div class="acc-sub" data-ko="24’ LIFTOFF FESTIVAL l 상영" data-en="2024 LIFTOFF Festival Screening">24’ LIFTOFF FESTIVAL l 상영</div>
+</span>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2022 초록동색 – 서울예술대학교 | 주연" data-en="2022 Green Same Color – Seoul Institute of the Arts | Lead">2022 초록동색 – 서울예술대학교 | 주연</div>
+</div>
+
+</div>
+</div>
+
+<div class="accordion">
+<button class="acc-head" aria-expanded="false"><span data-ko="MUSIC VIDEO" data-en="MUSIC VIDEO">MUSIC VIDEO</span><span class="acc-ico">+</span></button>
+<div class="acc-body">
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2023 양다일 – 꽃 | 주연" data-en="2023 Yang Da-il – Flower | Lead">2023 양다일 – 꽃 | 주연</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2022 한동근 – 사랑인걸 | 주연" data-en="2022 Han Dong-geun – Because I Love You | Lead">2022 한동근 – 사랑인걸 | 주연</div>
+</div>
+</div>
+</div>
+
+<div class="accordion">
+<button class="acc-head" aria-expanded="false"><span data-ko="THEATRE" data-en="THEATRE">THEATRE</span><span class="acc-ico">+</span></button>
+<div class="acc-body">
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2019 Midnight Travel | 무용수" data-en="2019 Midnight Travel | Dancer">2019 Midnight Travel | 무용수</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-item-text" data-ko="2018 Eat (무언극) | 주연" data-en="2018 Eat (Mime) | Lead">2018 Eat (무언극) | 주연</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="about" class="section">
+<div class="page">
+<div class="page-header"><h1>about</h1><div class="slash"></div></div>
+
+<div class="about-wrap">
+
+<div class="about-title"
+data-ko="방향성"
+data-en="Artist Statement">
+방향성
+</div>
+
+<div class="about-text"
+data-ko="안녕하세요 저는 더 깊은 감정을 바라볼 수 있는 배우이자 사람이 되고자,<br>
+저에게 주어지는 만남과 경험을 진심으로 마주하며 하루를 살아가고자 합니다.<br>
+감사하게도 좋은 인연을 만나 작품을 이어가고 있으며,<br>
+제가 꿈꾸는 좋은 배우가 되도록 뜨겁게 살아가겠습니다."
+data-en="Hello, I aspire to become both an actor and a person who can look deeply into human emotion.<br>
+I try to live each day sincerely, embracing the encounters and experiences that come my way.<br>
+Fortunately, I continue working through meaningful collaborations,<br>
+and I will keep living passionately to become the actor I aspire to be.">
+
+안녕하세요 저는 더 깊은 감정을 바라볼 수 있는 배우이자 사람이 되고자,<br>
+저에게 주어지는 만남과 경험을 진심으로 마주하며 하루를 살아가고자 합니다.<br>
+감사하게도 좋은 인연을 만나 작품을 이어가고 있으며,<br>
+제가 꿈꾸는 좋은 배우가 되도록 뜨겁게 살아가겠습니다.
+
+</div>
+
+</div>
+
+<div class="press-title"
+data-ko="보도 · 기사"
+data-en="Press · Articles">
+보도 · 기사
+</div>
+
+<div class="press">
+<a class="press-item" href="https://cine21.com/news/view/?mag_id=108779" target="_blank">
+시네21 [인터뷰] 보이지 않던 이들의 삶에 촛불 하나를, &lt;후광&gt; 노영완 감독, 최강현 배우
+</a>
+
+<a class="press-item" href="https://www.newsprime.co.kr/news/article/?no=708243" target="_blank">
+노영완 감독 데뷔작 &lt;후광&gt;, 제38회 도쿄국제영화제 경쟁 부문 진출
+</a>
+
+<a class="press-item" href="https://2025.tiff-jp.net/news/en/?p=20157" target="_blank">
+[Event Report] The Burden of Family Undoes a Bright Future
+</a>
+
+<a class="press-item" href="https://www.screendaily.com/reviews/halo-review-gruelling-south-korean-debut-leans-into-the-grind-of-the-gig-economy/5210525.article?utm_source=chatgpt.com" target="_blank">
+[SCREENDAILY] Gruelling South Korean debut leans into the grind of the gig economy
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="section">
+<div class="page">
+<div class="page-header"><h1>contact</h1><div class="slash"></div></div>
+
+<div class="contact">
+<div class="contact-line">T.L · 010.3854.5366</div>
+<div class="contact-line">EMAIL · <a href="mailto:choiganghyun@naver.com">choiganghyun@naver.com</a></div>
+<div class="contact-line">INSTA · <a href="https://www.instagram.com/choigang_98" target="_blank">@choigang_98</a></div>
+</div>
+
+</div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+<button class="lb-close" id="lbClose" aria-label="Close">×</button>
+<img class="lb-img" id="lbImg" alt="">
+</div>
+
+<script src="script.js"></script>
+
+<script>
+let lang="ko";
+
+const toggleMain=document.getElementById("langToggle");
+const toggleTop=document.getElementById("langToggleTop");
+
+const koEls=document.querySelectorAll(".lang-ko");
+const enEls=document.querySelectorAll(".lang-en");
+
+function applyLang(){
+  document.querySelectorAll("[data-ko]").forEach(el=>{
+    el.innerHTML=(lang==="ko"?el.dataset.ko:el.dataset.en).replace(/<br>/g,"<br>");
+  });
+
+  koEls.forEach(el=>el.classList.toggle("active",lang==="ko"));
+  enEls.forEach(el=>el.classList.toggle("active",lang==="en"));
 }
 
-/* =========================================================
-   strip slider (WORK + PROFILE 공용)
-   - 클릭 시 대표 이미지 변경은 script.js에서 처리
-========================================================= */
-.strip{position:relative;margin:0 0 26px;}
-.strip__track{scroll-behavior:smooth;display:flex;gap:10px;overflow:auto;padding:8px 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
-.strip__track::-webkit-scrollbar{height:0;}
-.strip__item{flex:0 0 38%;max-width:38%;scroll-snap-align:center;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;padding:0;background:transparent;cursor:pointer;}
-.strip__item img{display:block;width:100%;height:88px;object-fit:cover;}
-.strip__item.is-selected{outline:1px solid rgba(255,255,255,.55);}
-.strip__fade{position:absolute;top:0;bottom:0;width:44px;z-index:3;pointer-events:none;}
-.strip__fade--left{left:0;background:linear-gradient(to right, rgba(0,0,0,.55), rgba(0,0,0,0));}
-.strip__fade--right{right:0;background:linear-gradient(to left, rgba(0,0,0,.55), rgba(0,0,0,0));}
+toggleMain.onclick=()=>{
+  lang=(lang==="ko")?"en":"ko";
+  applyLang();
+};
 
-/* profile strip은 영상 위니까 간격만 살짝 유지 */
-.strip--profile{margin-top:36px;}
-
-/* ✅ PROFILE strip: 원본 비율 유지 (잘림 없음, 여백 없는 방식) */
-.strip--profile .strip__item img{height:auto;object-fit:unset;}
-.strip--profile .strip__item{overflow:visible;}
-.strip--profile .strip__track{align-items:flex-start;}
-
-/* strip: 좌/우 클릭 영역(끝쪽 누르면 넘어가기) */
-.strip__edge{position:absolute;top:0;bottom:0;width:72px;z-index:6;background:transparent;border:0;cursor:pointer;}
-.strip__edge--left{left:0;}
-.strip__edge--right{right:0;}
-
-/* ✅ WORK 상단 featured 사진 크기 제한 */
-.work__featured img{height:360px;object-fit:contain;background:rgba(255,255,255,.04);}
-.work__featured{margin-top:22px;}
-
-/* ✅ PROFILE: 무조건 2열 (모바일 포함) */
-.profile-wrap{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:18px;}
-.profile-left{flex:0 0 38%!important;max-width:38%!important;}
-.profile-left img{width:100%;height:auto;display:block;border-radius:12px;}
-.profile-right{flex:1!important;min-width:0!important;}
-.profile-right .info{font-size:13px;}
-
-.bg-sub{filter:blur(18px);}
-
-/* 데스크탑 */
-@media (min-width:901px){
-  .profile-right .info{font-size:inherit;}
-  .strip__item{flex:0 0 18%;max-width:18%;}
-  .strip__item img{height:96px;}
-  .bg-main{animation:none;}
-  .page{transform:none;transform-origin:initial;}
-
-  /* WORK */
-  .work-title{font-size:14px;}
-  .work-desc{font-size:16px;}
-
-  .accordion .acc-item{padding:2px 0;}
-  .accordion .acc-item-text{font-size:15px;}
-  .accordion .acc-sub{font-size:3px;}
-  .accordion .acc-sub{margin-top:1px;}
-
-  /* ✅ 대표작만 강조 */
-  .work-featured .acc-item{font-size:18px;}
-  .work-featured .acc-sub{font-size:15px;}
-
-  /* ABOUT */
-  .about-title{font-size:18px;}
-  .about-text{font-size:15px;line-height:1.8;}
-  .press-item{font-size:16px;}
+if(toggleTop){
+  toggleTop.onclick=()=>{
+    lang=(lang==="ko")?"en":"ko";
+    applyLang();
+  };
 }
-
-/* 모바일 */
-@media (max-width:900px){
+</script>
 
 
-    /* WORK 메인 이미지: 화면 폭에 맞춤, 원본 비율 유지 */
-  .work__featured img{width:100%;height:auto;object-fit:contain;}
-
-  /* SHORT FILM / MUSIC VIDEO / THEATRE 글자 크기와 단락 조정 */
-  .accordion .acc-item-text{font-size:12px!important;}
-  .accordion .acc-sub{font-size:10px!important;margin-top:2px;}
-  .accordion .acc-item{padding:2px 0;}
-
-  .menu-panel{display:none !important;}
-  .menu-panel a{display:none !important;}
-
-  .work__featured img{height:240px;}
-
-  .menu-inline{position:absolute;right:0;top:50%;display:flex;align-items:center;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;z-index:30;} body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
-  .menu-inline a{font-size:14px;letter-spacing:.2em;cursor:pointer;}
-
-  body.menu-open #langToggleTop,body.menu-open #menuBtn{opacity:0;pointer-events:none;transform:translateX(-40px);transition:transform .35s ease;}
-
-  #menuBtn::before{content:"MPWAC";display:block;}
-
-  .video-wrap{margin-top:22px;}
-  .video-title{font-size:13px;}
-  .video-slash{width:120px;opacity:.6;}
-
-  .video-frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;}
-  .video-frame iframe{width:100%;height:100%;display:block;}
-}
+</body>
+</html>
