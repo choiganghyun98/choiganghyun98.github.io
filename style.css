@@ -154,6 +154,8 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .work-text{max-width:100%;}
   .work-shots{flex:auto;width:100%;}
   .work-shots img{max-width:48%;}
+  .work__featured img{height:240px;object-fit:contain;background:rgba(255,255,255,.04);}
+  .work__featured{margin-top:22px;}
   .work-featured .acc-item,.work-featured .acc-item-text{font-size:15px!important;line-height:1.8!important;}
 
   /* 3) SHORT FILM 스틸 들어간 항목: 작품명 위 / 스틸 아래로(세로) */
@@ -222,10 +224,6 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 .strip__edge{position:absolute;top:0;bottom:0;width:72px;z-index:6;background:transparent;border:0;cursor:pointer;}
 .strip__edge--left{left:0;}
 .strip__edge--right{right:0;}
-
-/* ✅ WORK 상단 featured 사진 크기 제한 */
-.work__featured img{height:240px;object-fit:contain;background:rgba(255,255,255,.04);}
-.work__featured{margin-top:22px;}
 
 /* ✅ PROFILE: 무조건 2열 (모바일 포함) */
 .profile-wrap{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:18px;}
