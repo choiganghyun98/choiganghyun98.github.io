@@ -163,7 +163,6 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .acc-work-text{font-size:15px;line-height:1.8;}
   .acc-work-shots{width:100%;display:flex;gap:10px;}
   .acc-work-shots img{max-width:48%;}
-  .acc-sub{font-size:12px;line-height:1.8;margin-top:6px;}
 
   /* profile grid */
   .profile-grid{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px;}
