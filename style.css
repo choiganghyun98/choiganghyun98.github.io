@@ -274,6 +274,8 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 
   body.menu-open #langToggleTop,body.menu-open #menuBtn{opacity:0;pointer-events:none;transform:translateX(-40px);transition:transform .35s ease;}
 
+  #menuBtn::before{content:"MPWAC";display:block;}
+  
   .video-wrap{margin-top:22px;}
   .video-title{font-size:13px;}
   .video-slash{width:120px;opacity:.6;}
