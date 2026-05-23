@@ -253,4 +253,17 @@ if(menuBtn && menuPanel){
     }
   });
 
+  document.querySelectorAll(".menu-inline a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  document.querySelectorAll(".menu-inline a").forEach(link=>{
+    link.addEventListener("click",(e)=>{
+      e.stopPropagation();
+      document.body.classList.remove("menu-open");
+    });
+  });
+
 }
