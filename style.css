@@ -348,6 +348,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   /* SHORT FILM / MUSIC VIDEO / THEATRE 글자 크기와 단락 조정 */
   .accordion .acc-item-text{font-size:12px!important;}
   .accordion .acc-sub{font-size:10px!important;margin-top:2px;}
+  .work-featured .acc-sub{font-size:12px!important;line-height:1.5!important;}
   .acc-item{font-size:15px;line-height:1.8;padding:6px 0;} .accordion .acc-item{padding:2px 0;}
 
   .menu-panel{display:none !important;}
