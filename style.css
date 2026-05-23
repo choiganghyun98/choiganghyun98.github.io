@@ -160,6 +160,8 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .acc-head{font-size:15px;padding:16px 0;}
   .acc-ico{font-size:15px;}
   .accordion .acc-item-text{font-size:12px!important;line-height:1.5;} .accordion .acc-sub{font-size:10px!important;line-height:1.5;margin-top:2px;}
+  .accordion .acc-item{padding:1px 0;line-height:1.5;}
+  .work-featured .acc-sub{font-size:12px!important;line-height:1.8!important;margin-top:6px!important;}
   .acc-work{flex-direction:column;gap:12px;align-items:flex-start;padding:14px 0;}
   .acc-work-text{font-size:15px;line-height:1.8;}
   .acc-work-shots{width:100%;display:flex;gap:10px;}
@@ -222,7 +224,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 .strip__edge--right{right:0;}
 
 /* ✅ WORK 상단 featured 사진 크기 제한 */
-.work__featured img{height:360px;object-fit:contain;background:rgba(255,255,255,.04);}
+.work__featured img{height:240px;object-fit:contain;background:rgba(255,255,255,.04);}
 .work__featured{margin-top:22px;}
 
 /* ✅ PROFILE: 무조건 2열 (모바일 포함) */
@@ -259,136 +261,4 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .about-title{font-size:18px;}
   .about-text{font-size:15px;line-height:1.8;}
   .press-item{font-size:16px;}
-}
-
-/* 모바일 */
-@media (max-width:900px){
-
-
-    /* WORK 메인 이미지: 화면 폭에 맞춤, 원본 비율 유지 */
-  .work__featured img{width:100%;height:auto;object-fit:contain;}
-
-  /* SHORT FILM / MUSIC VIDEO / THEATRE 글자 크기와 단락 조정 */
-  .accordion .acc-item-text{font-size:12px!important;}
-
-/* =========================================================
-   strip slider (WORK + PROFILE 공용)
-   - 클릭 시 대표 이미지 변경은 script.js에서 처리
-========================================================= */
-.strip{position:relative;margin:0 0 26px;}
-.strip__track{scroll-behavior:smooth;display:flex;gap:10px;overflow:auto;padding:8px 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
-.strip__track::-webkit-scrollbar{height:0;}
-.strip__item{flex:0 0 38%;max-width:38%;scroll-snap-align:center;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;padding:0;background:transparent;cursor:pointer;}
-.strip__item img{display:block;width:100%;height:88px;object-fit:cover;}
-.strip__item.is-selected{outline:1px solid rgba(255,255,255,.55);}
-.strip__fade{position:absolute;top:0;bottom:0;width:44px;z-index:3;pointer-events:none;}
-.strip__fade--left{left:0;background:linear-gradient(to right, rgba(0,0,0,.55), rgba(0,0,0,0));}
-.strip__fade--right{right:0;background:linear-gradient(to left, rgba(0,0,0,.55), rgba(0,0,0,0));}
-
-/* profile strip은 영상 위니까 간격만 살짝 유지 */
-.strip--profile{margin-top:36px;}
-
-/* ✅ PROFILE strip: 원본 비율 유지 (잘림 없음, 여백 없는 방식) */
-.strip--profile .strip__item img{height:auto;object-fit:unset;}
-.strip--profile .strip__item{overflow:visible;}
-.strip--profile .strip__track{align-items:flex-start;}
-
-/* strip: 좌/우 클릭 영역(끝쪽 누르면 넘어가기) */
-.strip__edge{position:absolute;top:0;bottom:0;width:72px;z-index:6;background:transparent;border:0;cursor:pointer;}
-.strip__edge--left{left:0;}
-.strip__edge--right{right:0;}
-
-/* ✅ WORK 상단 featured 사진 크기 제한 */
-.work__featured img{height:360px;object-fit:contain;background:rgba(255,255,255,.04);}
-.work__featured{margin-top:22px;}
-
-/* ✅ PROFILE: 무조건 2열 (모바일 포함) */
-.profile-wrap{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:18px;}
-.profile-left{flex:0 0 38%!important;max-width:38%!important;}
-.profile-left img{width:100%;height:auto;display:block;border-radius:12px;}
-.profile-right{flex:1!important;min-width:0!important;}
-.profile-right .info{font-size:13px;}
-
-.bg-sub{filter:blur(18px);}
-
-/* 데스크탑 */
-@media (min-width:901px){
-  .profile-right .info{font-size:inherit;}
-  .strip__item{flex:0 0 18%;max-width:18%;}
-  .strip__item img{height:96px;}
-  .bg-main{animation:none;}
-  .page{transform:none;transform-origin:initial;}
-
-  /* WORK */
-  .work-title{font-size:14px;}
-  .work-desc{font-size:16px;}
-
-  .accordion .acc-item{padding:2px 0;}
-  .accordion .acc-item-text{font-size:15px;}
-  .accordion .acc-sub{font-size:3px;}
-  .accordion .acc-sub{margin-top:1px;}
-
-  /* ✅ 대표작만 강조 */
-  .work-featured .acc-item{font-size:18px;}
-  .work-featured .acc-sub{font-size:15px;}
-
-  /* ABOUT */
-  .about-title{font-size:18px;}
-  .about-text{font-size:15px;line-height:1.8;}
-  .press-item{font-size:16px;}
-}
-
-/* 모바일 */
-@media (max-width:900px){
-
-
-    /* WORK 메인 이미지: 화면 폭에 맞춤, 원본 비율 유지 */
-  .work__featured img{width:100%;height:auto;object-fit:contain;}
-
-  /* SHORT FILM / MUSIC VIDEO / THEATRE 글자 크기와 단락 조정 */
-  .accordion .acc-item-text{font-size:12px!important;}
-  .accordion .acc-sub{font-size:10px!important;margin-top:2px;}
-  .work-featured .acc-sub{font-size:12px!important;line-height:1.5!important;}
-  .acc-item{font-size:15px;line-height:1.8;padding:6px 0;} .accordion .acc-item{padding:2px 0;}
-
-  .menu-panel{display:none !important;}
-  .menu-panel a{display:none !important;}
-
-  .work__featured img{height:240px;}
-
-  .menu-inline{position:absolute;right:0;top:50%;display:flex;align-items:center;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;z-index:30;} body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
-  .menu-inline a{font-size:14px;letter-spacing:.2em;cursor:pointer;}
-
-  body.menu-open #langToggleTop,body.menu-open #menuBtn{opacity:0;pointer-events:none;transform:translateX(-40px);transition:transform .35s ease;}
-
-  #menuBtn::before{content:"MPWAC";display:block;}
-
-  .video-wrap{margin-top:22px;}
-  .video-title{font-size:13px;}
-  .video-slash{width:120px;opacity:.6;}
-
-  .video-frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;}
-  .video-frame iframe{width:100%;height:100%;display:block;}
-}
- .acc-sub{font-size:10px!important;margin-top:2px;}
-  .accordion .acc-item{padding:2px 0;}
-
-  .menu-panel{display:none !important;}
-  .menu-panel a{display:none !important;}
-
-  .work__featured img{height:240px;}
-
-  .menu-inline{position:absolute;right:0;top:50%;display:flex;align-items:center;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;z-index:30;} body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
-  .menu-inline a{font-size:14px;letter-spacing:.2em;cursor:pointer;}
-
-  body.menu-open #langToggleTop,body.menu-open #menuBtn{opacity:0;pointer-events:none;transform:translateX(-40px);transition:transform .35s ease;}
-
-  #menuBtn::before{content:"MPWAC";display:block;}
-
-  .video-wrap{margin-top:22px;}
-  .video-title{font-size:13px;}
-  .video-slash{width:120px;opacity:.6;}
-
-  .video-frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;}
-  .video-frame iframe{width:100%;height:100%;display:block;}
 }
