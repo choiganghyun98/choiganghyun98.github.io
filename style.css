@@ -264,6 +264,15 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 /* 모바일 */
 @media (max-width:900px){
 
+
+    /* WORK 메인 이미지: 화면 폭에 맞춤, 원본 비율 유지 */
+  .work__featured img{width:100%;height:auto;object-fit:contain;}
+
+  /* SHORT FILM / MUSIC VIDEO / THEATRE 글자 크기와 단락 조정 */
+  .accordion .acc-item-text{font-size:15px!important;}
+  .accordion .acc-sub{font-size:11px!important;margin-top:2px;}
+  .accordion .acc-item{padding:2px 0;}
+
   .menu-panel{display:none !important;}
   .menu-panel a{display:none !important;}
 
@@ -275,8 +284,6 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   body.menu-open #langToggleTop,body.menu-open #menuBtn{opacity:0;pointer-events:none;transform:translateX(-40px);transition:transform .35s ease;}
 
   #menuBtn::before{content:"MPWAC";display:block;}
-
-  .accordion .acc-item-text{font-size:15px!important;} .accordion .acc-sub{font-size:11px!important;}
 
   .video-wrap{margin-top:22px;}
   .video-title{font-size:13px;}
