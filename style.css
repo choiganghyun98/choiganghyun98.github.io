@@ -265,6 +265,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
 /* 모바일 */
 @media (max-width:900px){
 
+  .profile-right .info span:first-child{min-width:52px;}
   .menu-panel{display:none !important;}
   .menu-panel a{display:none !important;}
 
