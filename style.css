@@ -145,6 +145,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .profile-wrap{flex-direction:column;gap:22px;margin-top:34px;}
   .profile-left{flex:auto;width:100%;}
   .profile-right{gap:10px;}
+  .profile-right .info{justify-content:flex-start;gap:8px;}
 
   /* 2) work 전체 글씨 조금 다운 (세계의 주인 라인 잘림 방지) */
   .work-title{font-size:18px;line-height:1.75;}
@@ -267,7 +268,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .menu-panel{display:none !important;}
   .menu-panel a{display:none !important;}
 
-  .work__featured img{height:240px;}
+  .work__featured img{width:100%;height:auto;object-fit:contain;}
 
   .menu-inline{position:absolute;right:0;top:50%;display:flex;align-items:center;gap:14px;opacity:0;transform:translate(40px,-50%);transition:transform .35s ease,opacity .35s ease;will-change:transform,opacity;z-index:30;} body.menu-open .menu-inline{opacity:1;transform:translate(0,-50%);}
   .menu-inline a{font-size:14px;letter-spacing:.2em;cursor:pointer;}
