@@ -158,7 +158,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   /* 3) SHORT FILM 스틸 들어간 항목: 작품명 위 / 스틸 아래로(세로) */
   .acc-head{font-size:15px;padding:16px 0;}
   .acc-ico{font-size:15px;}
-  .accordion .acc-item{font-size:12px;line-height:1.5;padding:2px 0;}
+  .acc-item{font-size:15px;line-height:1.8;padding:8px 0;} .accordion .acc-item{font-size:12px;line-height:1.5;padding:2px 0;}
   .acc-work{flex-direction:column;gap:12px;align-items:flex-start;padding:14px 0;}
   .acc-work-text{font-size:15px;line-height:1.8;}
   .acc-work-shots{width:100%;display:flex;gap:10px;}
