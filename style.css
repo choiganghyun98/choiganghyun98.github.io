@@ -154,6 +154,7 @@ body.sub.nav-guard .topnav-guard{opacity:1;pointer-events:auto;}
   .work-text{max-width:100%;}
   .work-shots{flex:auto;width:100%;}
   .work-shots img{max-width:48%;}
+  .work-featured .acc-item{font-size:15px;line-height:1.8;}
 
   /* 3) SHORT FILM 스틸 들어간 항목: 작품명 위 / 스틸 아래로(세로) */
   .acc-head{font-size:15px;padding:16px 0;}
